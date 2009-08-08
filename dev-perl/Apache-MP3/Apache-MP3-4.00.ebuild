@@ -10,10 +10,11 @@ SRC_URI="http://search.cpan.org/CPAN/authors/id/L/LD/LDS/Apache-MP3-4.00.tar.gz"
 
 LICENSE="Artistic-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="ogg wav"
 
+# nicer solution with webappconfig?
 WWW_DIR="/var/www/localhost"
 
 DEPEND="dev-lang/perl"
@@ -40,5 +41,5 @@ pkg_postinst() {
     perl-module_pkg_postinst
     einfo ""
     einfo "Skin directory copied to ${WWW_DIR}/apache_mp3".
-	einfo ""
+    einfo ""
 }
