@@ -1,0 +1,22 @@
+--- bin/rdig.orig	2008-12-27 19:56:53.000000000 +0100
++++ bin/rdig		2008-12-27 19:55:26.000000000 +0100
+@@ -1,15 +1,10 @@
++#!/usr/bin/ruby18
+ #!/usr/bin/env ruby
+ 
+-# run from RAILS_ROOT with 
+-# ruby -Ilib vendor/plugins/sitesearch/create_index.rb config
+-# where config is the name of your config file
++
++
++require 'rdig'
+ 
+-begin
+-  require 'rdig'
+-rescue LoadError
+-  require 'rubygems'
+-  require 'rdig'
+-end
+ RDig.application.run
+ 
+ 

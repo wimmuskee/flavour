@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>perl</herd>
+
+	<maintainer>
+		<email>wimmuskee@gmail.com</email>
+		<name>Wim Muskee</name>
+	</maintainer>
+	<longdescription lang="en">
+	In combination with the Apache web server and mod_perl, Apache::MP3
+	lets you create a virtual jukebox of your MP3, WAV and Ogg Vorbis music
+	files, browse them over the web, create playlists, and stream them.
+	</longdescription>
+	<use>
+		<flag name="wav">Enable wav audio codec support</flag>
+	</use>
+</pkgmetadata>
