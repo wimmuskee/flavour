@@ -11,7 +11,7 @@ SRC_URI="http://www.cq2.nl/opensourcepackages/slowfoot-7.3.1-src.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 IUSE="examples"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 DOCS="CHANGES"
 
 DEPEND=""
@@ -30,8 +30,8 @@ src_install() {
     # copy examples
     if use examples; then
     	docinto "examples"
-		dodoc examples/*.* || die "Installing examples failed."
-		docinto "templates"
-		dodoc examples/templates/* || die "Installing templates failed."
+	dodoc examples/*.* || die "Installing examples failed."
+	docinto "templates"
+	dodoc examples/templates/* || die "Installing templates failed."
     fi
 }

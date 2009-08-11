@@ -12,7 +12,7 @@ SRC_URI="http://www.cq2.nl/opensourcepackages/meresco-harvester-5.2.2-src.tar.gz
 LICENSE="GPL"
 SLOT="0"
 IUSE="doc examples"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
 
@@ -27,12 +27,12 @@ src_install() {
     
     # copy docs
     if use doc; then
-		dodoc doc/* || die "Installing docs failed."
+	dodoc doc/* || die "Installing docs failed."
     fi
     
     # copy examples
     if use examples; then
     	docinto "examples"
-		dodoc examples/* || die "Installing examples failed."
+	dodoc examples/* || die "Installing examples failed."
     fi
 }
