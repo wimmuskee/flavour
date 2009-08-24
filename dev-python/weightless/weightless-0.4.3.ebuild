@@ -14,7 +14,7 @@ IUSE="examples"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-    =dev-python/cq2utils-5.4
+    =dev-python/cq2utils-5.4*
     >dev-python/werkzeug-0.4.1
     dev-python/pyopenssl"
 	
