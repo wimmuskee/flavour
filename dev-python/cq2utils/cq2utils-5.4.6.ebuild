@@ -7,7 +7,7 @@ inherit distutils
 DESCRIPTION="A package with a wide range of valuable tools for MERESCO and other cq2 packages."
 HOMEPAGE="http://www.cq2.nl/sources"
 SRC_URI="http://www.cq2.nl/opensourcepackages/${P}-src.tar.gz"
-LICENSE="GPL"
+LICENSE="GPL2"
 SLOT="0"
 KEYWORDS="~amd64"
 
