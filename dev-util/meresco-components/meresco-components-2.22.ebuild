@@ -2,18 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-
-
-# change to dev-lib
-# geen examples, alles in doc
-# wellicht ook tools kopieren
+# depend on meresco-core
 
 
 EAPI="2"
 
 inherit distutils
 
-DESCRIPTION="The MERESCO core libraries."
+DESCRIPTION="Components to build searchengines, repositories and archives, based on Meresco Core."
 HOMEPAGE="http://www.meresco.com"
 SRC_URI="http://www.cq2.nl/opensourcepackages/${P}-src.tar.gz"
 SLOT="0"
@@ -22,7 +18,9 @@ KEYWORDS="~amd64"
 
 IUSE="doc examples"
 
-DEPEND=""
+DEPEND=">=dev-libs/glib-2.0
+    dev-java/gcj-jdk"
+
 RDEPEND="${DEPEND}
     =dev-python/python-cqlparser-1.5*
     =dev-python/python-storage-5.1*
