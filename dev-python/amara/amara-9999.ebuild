@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc examples"
 
-DEPEND=">=dev-lang/python-2.5[wide-unicode]
-    doc? ( dev-python/epydoc )"
+DEPEND="doc? ( dev-python/epydoc )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
