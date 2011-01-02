@@ -20,7 +20,7 @@ DEPEND="virtual/ruby
 RDEPEND="${DEPEND}
     >=dev-ruby/hpricot-0.4 
     >=dev-ruby/ruby-ferret-0.10
-    pdf? ( virtual/poppler )
+    pdf? ( app-text/poppler )
     rtf? ( app-text/wv )"
 
 PATCHES="${FILESDIR}/bin-rdig.patch"
