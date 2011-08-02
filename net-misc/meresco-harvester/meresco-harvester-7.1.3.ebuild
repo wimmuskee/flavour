@@ -1,15 +1,17 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2:2.6"
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
 DESCRIPTION="The OAI-Harvester from MERESCO, a next generation library of components for (meta)data management."
 HOMEPAGE="http://www.meresco.com"
 SRC_URI="http://www.cq2.nl/opensourcepackages/${P}-src.tar.gz"
-LICENSE="GPL"
+LICENSE="GPL-2"
 SLOT="0"
 IUSE="doc examples"
 KEYWORDS="~amd64 ~x86"
@@ -31,7 +33,6 @@ src_install() {
     dodir "${WEBDATADIR}/data"
     dodir "${WEBDATADIR}/state"
     insinto ${WEBDATADIR}
-    doins examples/users.txt
     doins examples/startharvester.py
     fowners -R apache:apache ${WEBDATADIR} || die "Setting permissions on web data directory failed."
 
@@ -42,19 +43,21 @@ src_install() {
 		SITECUSTOMIZE=""
     else
 		insinto "/usr/lib/python${PYVER}/site-packages"	
+		doins "${FILESDIR}/sitecustomize.py"
     fi
 
-    doins "${FILESDIR}/sitecustomize.py"
-
+    
     # copy docs
     if use doc; then
 		dodoc doc/* || die "Installing docs failed."
+		dodoc applied/* || die "Installing changelogs failed."
     fi
 
     # copy examples
     if use examples; then
     	docinto examples
 		dodoc examples/meresco-harvester.apache.conf || die "Installing examples failed."
+		dodoc examples/users.txt || die "Installing default user file failed."
     fi
 }
 
@@ -67,6 +70,9 @@ pkg_postinst() {
     fi
     
     einfo "Web accessible data storage is setup in ${WEBDATADIR}."
+    einfo ""
+    einfo "Create the admin user by issuing this command:"
+    einfo "echo \"admin:\$(echo -n <yourpassword> | md5sum | awk '{print \$1}')\" > ${WEBDATADIR}/users.txt"
     einfo ""
     einfo "Start a harvest run for a specified domain with:"
     einfo "python /var/lib/meresco-harvester/startharvester.py -d <domain>"
