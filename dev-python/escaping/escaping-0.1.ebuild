@@ -11,8 +11,8 @@ SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 DESCRIPTION="A collection of functions for escaping filenames etc."
-HOMEPAGE="http://www.meresco.com"
-SRC_URI="http://www.cq2.nl/opensourcepackages/${P}-src.tar.gz"
+HOMEPAGE="http://www.meresco.org"
+SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
