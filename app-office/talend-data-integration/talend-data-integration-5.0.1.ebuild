@@ -30,12 +30,12 @@ src_install() {
 	# executables
     if use x86; then
         doins cp TOS_DI-linux-gtk-x86*
-        chmod 755 ${INSTALLDIR} TOS_DI-linux-gtk-x86
+        chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86
     elif use amd64; then
     	doins TOS_DI-linux-gtk-x86_64*
-    	chmod 755 ${INSTALLDIR} TOS_DI-linux-gtk-x86_64
+    	chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86_64
 	elif use ppc; then
 		doins TOS_DI-linux-gtk-ppc*
-		chmod 755 ${INSTALLDIR} TOS_DI-linux-gtk-ppc
+		chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-ppc
 	fi
 }
