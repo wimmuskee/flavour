@@ -8,17 +8,25 @@ SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
-DESCRIPTION="A template engine based on generators, and a sequel to Slowfoot"
+DESCRIPTION="The MERESCO core libraries."
 HOMEPAGE="http://www.meresco.com"
 SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
-LICENSE="GPL-2"
 SLOT="0"
-IUSE=""
-KEYWORDS="~amd64 ~x86"
+LICENSE="GPL2"
+KEYWORDS="~amd64"
+IUSE="doc"
 RESTRICT="mirror"
 DEPEND=""
 RDEPEND="${DEPEND}
-	=dev-python/amara-1.2.0.2
-	dev-python/lxml
-	>=dev-util/meresco-core-4.0
-	<dev-util/meresco-core-4.0"
+	dev-python/setuptools
+	>=dev-python/weightless-core-0.7.1"
+
+
+src_install() {
+    distutils_src_install
+
+    # copy docs
+    if use doc; then
+        dodoc doc/*.odt doc/MerescoTechnicalConcepts.txt || die "Installing docs failed."
+    fi
+}
