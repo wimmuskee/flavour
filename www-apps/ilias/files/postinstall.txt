@@ -1,0 +1,1 @@
+0. chmod 775 ${VHOST_ROOT}/${PN}

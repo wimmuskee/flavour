@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	>=www-servers/apache-2.2
 	>=dev-lang/php-5.2.6[gd,mysql,xml,xsl]
 	>=virtual/mysql-5.0
-	media-gfx/imagemagick[jpg,png,gif]
+	media-gfx/imagemagick[jpeg,png]
 	dev-php/pear
 	dev-php/PEAR-Auth
 	dev-php/PEAR-MDB2[mysql]
@@ -53,5 +53,7 @@ src_install() {
 	insinto ${MY_HTDOCSDIR}
 	doins -r .
 	
+	webapp_configfile ${MY_HTDOCSDIR}/ilias.ini.php
+	webapp_postinst_txt en "${FILESDIR}/postinstall.txt"
 	webapp_src_install
 }
