@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-name="${PN}-5_2_1"
+name="${PN}-5_3_0"
 DESCRIPTION="The XMLmind XML Editor (Personal Edition)"
 HOMEPAGE="http://www.xmlmind.com/xmleditor"
 SRC_URI="http://www.xmlmind.net/xmleditor/_download/${name}.tar.gz"
