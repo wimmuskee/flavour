@@ -9,7 +9,7 @@ SRC_URI="http://www.xmlmind.net/xmleditor/_download/${name}.tar.gz"
 IUSE="doc examples"
 SLOT="0"
 LICENSE="xmlmind-xmleditor-perso"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 RESTRICT="strip mirror"
 RDEPEND=">=virtual/jre-1.6.0"
 INSTALLDIR=/opt/${PN}

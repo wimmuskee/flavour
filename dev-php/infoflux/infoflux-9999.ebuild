@@ -13,7 +13,7 @@ HOMEPAGE="http://launchpad.net/infoflux"
 LICENSE="GPL-2"
 SLOT="0"
 WEBAPP_MANUAL_SLOT="yes"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 DEPEND=">dev-lang/php-5.2"
 
