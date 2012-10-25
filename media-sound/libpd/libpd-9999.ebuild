@@ -3,12 +3,11 @@
 # $Header: $
 
 EAPI="3"
-
-inherit distutils eutils git-2
-
 EGIT_REPO_URI="git://github.com/libpd/libpd.git"
 PYTHON_DEPEND="*:2.6:3.1"
 SUPPORT_PYTHON_ABIS="1"
+
+inherit distutils eutils git-2
 
 DESCRIPTION="Turning Pure Data into an embeddable audio synthesis library."
 HOMEPAGE="http://www/libpd.cc"
@@ -40,7 +39,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
-	dosym /usr/lib/pd/libpd.so /usr/lib/libpd.so
+	dosym pd/libpd.so /usr/lib/libpd.so
 
 	# headers
 	insinto /usr/include/pd
@@ -51,5 +50,17 @@ src_install() {
 		pushd python
 		distutils_src_install
 		popd
+	fi
+}
+
+pkg_postinst() {
+	if use python; then
+		distutils_pkg_postinst
+	fi
+}
+
+pkg_postrm() {
+	if use python; then
+		distutils_pkg_postrm
 	fi
 }
