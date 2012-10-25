@@ -1,0 +1,22 @@
+--- Makefile.orig	2012-10-22 18:46:06.000000000 +0200
++++ Makefile	2012-10-22 18:48:15.000000000 +0200
+@@ -130,3 +130,19 @@
+ 	rm -f $(LIBPD) $(PDCSHARP) $(PDJAVA_NATIVE) $(PDJAVA_JAR)
+ 	rm -f libs/`basename $(PDJAVA_NATIVE)`
+ 	rm -rf $(PDJAVA_BUILD)
++
++install:
++	mkdir -p ${DESTDIR}usr/lib/pd
++	mkdir -p ${DESTDIR}usr/include/pd
++	cp -f $(LIBPD) ${DESTDIR}usr/lib/pd
++	cp -f ${PD_FILES:.c=.o} ${DESTDIR}usr/lib/pd
++	cp -f pure-data/src/g_all_guis.h ${DESTDIR}usr/include/pd/.
++	cp -f pure-data/src/g_canvas.h ${DESTDIR}usr/include/pd/.
++	cp -f pure-data/src/m_imp.h ${DESTDIR}usr/include/pd/.
++	cp -f pure-data/src/m_pd.h ${DESTDIR}usr/include/pd/.
++	cp -f pure-data/src/s_stuff.h ${DESTDIR}usr/include/pd/.
++	cp -f pure-data/src/s_utf8.h ${DESTDIR}usr/include/pd/.
++	cp -f libpd_wrapper/x_libpdreceive.h ${DESTDIR}usr/include/pd/.
++	cp -f libpd_wrapper/z_csharp_helper.h ${DESTDIR}usr/include/pd/.
++	cp -f libpd_wrapper/z_jni.h ${DESTDIR}usr/include/pd/.
++	cp -f libpd_wrapper/z_libpd.h ${DESTDIR}usr/include/pd/.
