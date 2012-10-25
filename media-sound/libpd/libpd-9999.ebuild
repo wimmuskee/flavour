@@ -21,10 +21,10 @@ DEPEND="
 	python? (
 		dev-lang/swig
 	)"
+RDEPEND="${DEPEND}"
 
 
 src_prepare() {
-	# i realize this patch doesn't win any beauty contests
 	epatch "${FILESDIR}/${PN}-makeinstall.patch"
 }
 
@@ -40,6 +40,12 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
+	dosym /usr/lib/pd/libpd.so /usr/lib/libpd.so
+
+	# headers
+	insinto /usr/include/pd
+	doins pure-data/src/*.h
+	doins libpd_wrapper/*.h
 
 	if use python; then
 		pushd python
