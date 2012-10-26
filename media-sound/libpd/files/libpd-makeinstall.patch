@@ -6,6 +6,6 @@
  	rm -rf $(PDJAVA_BUILD)
 +
 +install:
-+	mkdir -p ${DESTDIR}usr/lib/pd
-+	cp -f $(LIBPD) ${DESTDIR}usr/lib/pd
-+	cp -f ${PD_FILES:.c=.o} ${DESTDIR}usr/lib/pd
++	mkdir -p ${DESTDIR}/usr/lib/pd
++	cp -f $(LIBPD) ${DESTDIR}/usr/lib/pd
++	cp -f ${PD_FILES:.c=.o} ${DESTDIR}/usr/lib/pd

@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="examples"
 # depend on libpd from flavour overlay
-DEPEND="media-sound/libpd"
+DEPEND="media-sound/libpd
+	media-sound/jack-audio-connection-kit"
 RDEPEND="${DEPEND}"
 
 
