@@ -9,8 +9,8 @@ SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 DESCRIPTION="A parser that builds a parsetree for the given CQL and can convert this into other formats."
-HOMEPAGE="http://sources.meresco.org/sources"
-SRC_URI="http://sources.meresco.org/opensourcepackages/cqlparser-${PV}-src.tar.gz"
+HOMEPAGE="http://sources.seecr.nl/sources"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/cqlparser-${PV}-src.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64"

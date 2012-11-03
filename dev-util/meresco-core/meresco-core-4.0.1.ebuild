@@ -10,7 +10,7 @@ inherit distutils
 
 DESCRIPTION="The MERESCO core libraries."
 HOMEPAGE="http://www.meresco.com"
-SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/${P}-src.tar.gz"
 SLOT="0"
 LICENSE="GPL2"
 KEYWORDS="~amd64"

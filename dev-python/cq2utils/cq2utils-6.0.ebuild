@@ -9,8 +9,8 @@ SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 DESCRIPTION="A package with a wide range of valuable tools for MERESCO and other cq2 packages."
-HOMEPAGE="http://sources.meresco.org/sources"
-SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
+HOMEPAGE="http://sources.seecr.nl/sources"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/${P}-src.tar.gz"
 LICENSE="GPL2"
 SLOT="0"
 KEYWORDS="~amd64"

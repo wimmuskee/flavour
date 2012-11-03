@@ -10,12 +10,12 @@ inherit distutils
 
 DESCRIPTION="The OAI-Harvester from MERESCO, a next generation library of components for (meta)data management."
 HOMEPAGE="http://www.meresco.com"
-SRC_URI="http://www.cq2.nl/opensourcepackages/${P}-src.tar.gz"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/${P}-src.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 IUSE="doc examples"
 KEYWORDS="~amd64 ~x86"
-
+RESTRICT="mirror"
 WEBDATADIR="/var/lib/${PN}"
 
 DEPEND=""

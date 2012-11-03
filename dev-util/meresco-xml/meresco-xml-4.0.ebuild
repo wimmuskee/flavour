@@ -10,7 +10,7 @@ inherit distutils
 
 DESCRIPTION="XML components based on Meresco."
 HOMEPAGE="http://www.meresco.com"
-SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/${P}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""

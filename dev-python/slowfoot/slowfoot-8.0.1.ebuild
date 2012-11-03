@@ -10,8 +10,8 @@ inherit distutils
 inherit eutils
 
 DESCRIPTION="Slowfoot is an integration system for web-based applications."
-HOMEPAGE="http://www.cq2.nl/sources"
-SRC_URI="http://sources.meresco.org/opensourcepackages/${P}-src.tar.gz"
+HOMEPAGE="http://sources.seecr.nl/sources"
+SRC_URI="http://sources.seecr.nl/opensourcepackages/${P}-src.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 IUSE="examples"
