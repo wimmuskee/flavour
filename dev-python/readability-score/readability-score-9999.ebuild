@@ -8,9 +8,9 @@ SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils git-2
 
-EGIT_REPO_URI="git://github.com/wimmuskee/avi-calculator.git"
-DESCRIPTION="This python library can calculate the AVI score of a Dutch text."
-HOMEPAGE="http://github.com/wimmuskee/avi-calculator"
+EGIT_REPO_URI="git://github.com/wimmuskee/readability-score.git"
+DESCRIPTION="This Python library can calculate the readability score of a text."
+HOMEPAGE="http://github.com/wimmuskee/readability-score"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
