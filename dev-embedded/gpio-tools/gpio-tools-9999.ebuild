@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit git-2
+inherit git-2 linux-info
 
 EGIT_REPO_URI="git://github.com/wimmuskee/gpio-tools.git"
 DESCRIPTION="Shell library to access the GPIO, designed to be board agnostic."
@@ -19,8 +19,16 @@ RDEPEND="${DEPEND}
 	app-shells/bash"
 
 
+pkg_pretend() {
+	linux_config_exists || die "No kernel config found"
+	linux_chkconfig_present GENERIC_GPIO || die "GENERIC_GPIO is not set in kernel"
+}
+
 src_install() {
-	dobin bin/lsgpio
+	if linux_chkconfig_present DEBUG_FS; then
+		dobin bin/lsgpio
+	fi
+
 	dodoc README
 
 	insinto /usr/share/gpio-tools
