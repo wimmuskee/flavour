@@ -12,11 +12,12 @@ HOMEPAGE="http://github.com/wimmuskee/gpio-tools"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 LICENSE="GPL-3"
-# For future, make board USE flags?
+# For future, make board, lcd USE flags?
 IUSE="examples"
 DEPEND=""
 RDEPEND="${DEPEND}
-	app-shells/bash"
+	app-shells/bash
+	sys-devel/bc"
 
 
 pkg_pretend() {
@@ -29,12 +30,13 @@ src_install() {
 		dobin bin/lsgpio
 	fi
 
-	dodoc README
-
 	insinto /usr/share/gpio-tools
 	doins gpio.sh
 	doins -r boards
+	doins -r libraries
 	doins -r mappings
+	
+	dodoc README
 
 	if use examples; then
 		docinto examples
