@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+inherit eutils
+
 DESCRIPTION="Extracts and cleans text from Wikipedia database dump."
 HOMEPAGE="https://bitbucket.org/leonardossz/multithreaded-wikipedia-extractor"
 SRC_URI="https://bitbucket.org/leonardossz/multithreaded-wikipedia-extractor/get/v1.0.0.zip"
@@ -14,10 +16,14 @@ RESTRICT="mirror"
 S="${WORKDIR}/leonardossz-${PN}-b32baff0db52"
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lang/python[threads]
+	dev-lang/python:2[threads]
 	dev-python/lxml
 	virtual/python-argparse"
 
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-shebang.patch"
+}
 
 src_install() {
 	newbin WikiExtractor.py WikiExtractor
