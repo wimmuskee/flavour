@@ -7,7 +7,7 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit bzr distutils twisted
+inherit bzr distutils eutils twisted
 
 EBZR_REPO_URI="http://bazaar.launchpad.net/~epoptes/epoptes/trunk"
 DESCRIPTION="Computer lab administration and monitoring tool"
@@ -26,9 +26,13 @@ RDEPEND="${DEPEND}
 	dev-python/pygtk
 	gnome-base/librsvg
 	gnome-extra/zenity[libnotify]
+	net-zope/zope-interface
 	x11-libs/vte[introspection]"
 
-
+pkg_setup() {
+	enewgroup epoptes
+}
+	
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-noclient_setup.patch"
 }

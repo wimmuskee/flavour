@@ -41,4 +41,6 @@ src_install() {
 	# install the rest
 	insopts -m755
 	doins epoptes-client/*
+	
+	doman epoptes-client.8
 }
