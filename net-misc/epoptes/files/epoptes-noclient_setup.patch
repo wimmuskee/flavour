@@ -1,0 +1,29 @@
+--- setup.py.orig	2013-01-13 14:55:34.281640468 +0000
++++ setup.py	2013-01-13 14:56:25.588639296 +0000
+@@ -55,18 +55,6 @@
+         res -= set(files)
+     return list(res)
+ 
+-client_special_files=[
+-    ('/etc/xdg/autostart/',
+-        ['epoptes-client/epoptes-client.desktop']),
+-    ('/usr/sbin/',
+-        ['epoptes-client/epoptes-client']),
+-    ('/usr/share/ldm/rc.d/',
+-        ['epoptes-client/X50-client-env']),
+-    ]
+-client_usr_share_files=[
+-    ('/usr/share/epoptes-client/',
+-        subtract_files(glob('epoptes-client/*'), client_special_files))
+-    ]
+ server_special_files=[
+     ('/usr/share/ltsp/plugins/ltsp-build-client/common/',
+         ['data/040-epoptes-certificate'])];
+@@ -80,6 +68,5 @@
+     author = 'Fotis Tsamis',
+     author_email = 'ftsamis@gmail.com',
+     py_modules = ['twisted.plugins.epoptesd'],
+-    data_files = client_special_files + client_usr_share_files +
+-        server_special_files
++    data_files = server_special_files
+ )
