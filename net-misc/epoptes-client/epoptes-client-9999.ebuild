@@ -41,6 +41,10 @@ src_install() {
 	# install the rest
 	insopts -m755
 	doins epoptes-client/*
-	
+
+	# man and config
 	doman epoptes-client.8
+
+	insinto /etc/default
+	newins debian/epoptes-client.default epoptes-client
 }

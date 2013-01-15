@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="3"
-PYTHON_DEPEND="2:2.6"
+PYTHON_DEPEND="2:2.7"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
@@ -27,12 +27,13 @@ RDEPEND="${DEPEND}
 	gnome-base/librsvg
 	gnome-extra/zenity[libnotify]
 	net-zope/zope-interface
+	sys-apps/iproute2
 	x11-libs/vte[introspection]"
 
 pkg_setup() {
 	enewgroup epoptes
 }
-	
+
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-noclient_setup.patch"
 }
@@ -44,5 +45,10 @@ src_compile() {
 }
 
 src_install() {
-    distutils_src_install
+	distutils_src_install
+
+	insinto /etc/default
+	newins debian/epoptes.default epoptes
+
+	newinitd ${FILESDIR}/epoptes.initd epoptes
 }

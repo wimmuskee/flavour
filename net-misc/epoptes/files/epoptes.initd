@@ -1,0 +1,10 @@
+#!/sbin/runscript
+
+pidfile="/var/run/${SVCNAME}.pid"
+logfile="/var/log/${SVCNAME}.log"
+command="/usr/bin/python2.7"
+command_args="/usr/bin/twistd --pidfile ${pidfile} --logfile ${logfile} epoptes"
+
+depend() {
+	use net
+}
