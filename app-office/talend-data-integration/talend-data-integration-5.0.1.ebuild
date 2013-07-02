@@ -1,8 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Talend Open Studio for Data Integration is a powerful and versatile open source solution for data integration."
+EAPI="5"
+
+DESCRIPTION="A powerful and versatile open source solution for data integration."
 HOMEPAGE="http://www.talend.com"
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,19 +23,19 @@ src_install() {
 	# application
 	insinto ${INSTALLDIR}
 	doins -r configuration features plugins workspace
-	
+
 	# docs
 	if use doc; then
 		dodoc about_files/*
 	fi
-	
+
 	# executables
-    if use x86; then
-        doins cp TOS_DI-linux-gtk-x86*
-        chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86
-    elif use amd64; then
-    	doins TOS_DI-linux-gtk-x86_64*
-    	chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86_64
+	if use x86; then
+		doins cp TOS_DI-linux-gtk-x86*
+		chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86
+	elif use amd64; then
+		doins TOS_DI-linux-gtk-x86_64*
+		chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-x86_64
 	elif use ppc; then
 		doins TOS_DI-linux-gtk-ppc*
 		chmod 755 ${INSTALLDIR}/TOS_DI-linux-gtk-ppc
