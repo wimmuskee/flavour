@@ -1,20 +1,20 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="5"
 
 EBZR_REPO_URI="http://bazaar.launchpad.net/~wimmuskee/infoflux/trunk"
 
 inherit bzr
 
-DESCRIPTION="The Infoflux framework aims to provide developers with an abstraction layer for various data sources."
+DESCRIPTION="The Infoflux framework aims to provide developers with an abstraction layer for data sources."
 HOMEPAGE="http://launchpad.net/infoflux"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="doc"
-DEPEND=">dev-lang/php-5.2
+RDEPEND=">dev-lang/php-5.2
 	doc? (
 		app-text/robodoc
 		app-text/xmlto )"

@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
+EAPI="5"
 
 inherit git-2 linux-info
 
@@ -19,7 +19,6 @@ RDEPEND="${DEPEND}
 	app-shells/bash
 	sys-devel/bc"
 
-
 pkg_pretend() {
 	linux_config_exists || die "No kernel config found"
 	linux_chkconfig_present GENERIC_GPIO || die "GENERIC_GPIO is not set in kernel"
@@ -35,7 +34,7 @@ src_install() {
 	doins -r boards
 	doins -r libraries
 	doins -r mappings
-	
+
 	dodoc README
 
 	if use examples; then
