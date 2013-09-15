@@ -21,5 +21,5 @@ RDEPEND="${DEPEND}
 
 
 src_install() {
-	newbin WikiExtractor.py WikiExtractor
+	newbin WikiExtractor.py WikiExtractorMultithreaded
 }

@@ -26,5 +26,5 @@ src_prepare() {
 }
 
 src_install() {
-	newbin WikiExtractor.py WikiExtractor
+	newbin WikiExtractor.py WikiExtractorMultithreaded
 }
