@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,14 +15,10 @@ LICENSE="GPL-1"
 RESTRICT="mirror"
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lang/python:2[threads]
+	=dev-lang/python-2*[threads]
 	dev-python/lxml
 	virtual/python-argparse"
 
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-shebang.patch"
-}
 
 src_install() {
 	newbin WikiExtractor.py WikiExtractor
