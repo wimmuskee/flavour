@@ -18,7 +18,7 @@ RESTRICT="mirror"
 IUSE=""
 DEPEND=""
 RDEPEND=">=dev-python/requests-1.1.0
-	>=dev-python/argparse-1.2.1"
+	virtual/python-argparse"
 
 # not including test functionality
 # for this, the following are required:
