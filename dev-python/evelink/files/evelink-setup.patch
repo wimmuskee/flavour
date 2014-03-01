@@ -1,0 +1,11 @@
+--- setup.py.orig	2014-03-01 16:26:06.522408980 +0100
++++ setup.py	2014-03-01 16:28:28.232437162 +0100
+@@ -27,7 +27,7 @@
+         "evelink.thirdparty",
+     ],
+     data_files=[
+-        ('', ['README.md', 'LICENSE']),
++        ('/usr/share/doc/evelink-' + __version__, ['README.md', 'LICENSE']),
+     ],
+     scripts=["bin/evelink"],
+     provides=["evelink"],
