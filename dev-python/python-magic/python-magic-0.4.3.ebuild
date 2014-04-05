@@ -1,18 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
-PYTHON_DEPEND="2:2.6"
-SUPPORT_PYTHON_ABIS="1"
+EAPI="5"
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 
-inherit distutils git
-
-EGIT_REPO_URI="http://github.com/ahupp/python-magic.git"
-EGIT_COMMIT="9e5ab19c49c7669d362b"
+inherit distutils
 
 DESCRIPTION="A python wrapper for libmagic."
 HOMEPAGE="http://github.com/ahupp/python-magic"
+SRC_URI="https://github.com/ahupp/python-magic/archive/${PV}.tar.gz"
 LICENSE="PSF"
+RESTRICT="mirror"
 SLOT="0"
 KEYWORDS="~amd64"
