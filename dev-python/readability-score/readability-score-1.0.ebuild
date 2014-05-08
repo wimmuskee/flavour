@@ -6,14 +6,15 @@ EAPI="5"
 
 PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 
-inherit distutils git-2
+inherit distutils
 
-EGIT_REPO_URI="git://github.com/wimmuskee/readability-score.git"
+SRC_URI="https://github.com/wimmuskee/${PN}/archive/v${PV}.tar.gz"
 DESCRIPTION="This Python library can calculate the readability score of a text."
 HOMEPAGE="http://github.com/wimmuskee/readability-score"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
+RESTRICT="mirror"
 IUSE=""
 # eix myspell | grep app-dicts | cut -d '-' -f 3 | tr '\n' ' '
 LANGS="af bg ca cs cy da de de el en eo es et fo fr ga gl he hr hu ia id is it km ku lt lv mi mk ms nb nl nn pl pt pt ro ru sk sl sq sv sw tn uk zu"
