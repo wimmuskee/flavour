@@ -6,7 +6,7 @@ EAPI="5"
 
 PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 
-inherit distutils
+inherit distutils-r1
 
 SRC_URI="https://github.com/wimmuskee/${PN}/archive/v${PV}.tar.gz"
 DESCRIPTION="This Python library can calculate the readability score of a text."
