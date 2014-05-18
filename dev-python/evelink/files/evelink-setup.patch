@@ -1,11 +1,23 @@
---- setup.py.orig	2014-03-01 16:26:06.522408980 +0100
-+++ setup.py	2014-03-01 16:28:28.232437162 +0100
-@@ -27,7 +27,7 @@
+--- setup.py.orig	2014-05-18 10:15:08.687412512 +0200
++++ setup.py	2014-05-18 10:20:55.325436688 +0200
+@@ -7,6 +7,11 @@
+ 
+ __readme_path = os.path.join(os.path.dirname(__file__), "README.md")
+ __readme_contents = open(__readme_path).read()
++__docdir = ""
++
++if os.path.exists("/usr/share/doc"):
++    __docdir = "/usr/share/doc/evelink-" + __version__
++
+ 
+ setup(
+     name="EVELink",
+@@ -28,7 +33,7 @@
          "evelink.thirdparty",
      ],
      data_files=[
 -        ('', ['README.md', 'LICENSE']),
-+        ('/usr/share/doc/evelink-' + __version__, ['README.md', 'LICENSE']),
++        (__docdir, ['README.md', 'LICENSE']),
      ],
      scripts=["bin/evelink"],
      provides=["evelink"],
