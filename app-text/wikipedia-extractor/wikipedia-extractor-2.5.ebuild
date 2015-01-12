@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit eutils git-2
+inherit eutils git-r3
 
 DESCRIPTION="Extracts and cleans text from Wikipedia database dump."
 HOMEPAGE="http://medialab.di.unipi.it/wiki/Wikipedia_Extractor"
