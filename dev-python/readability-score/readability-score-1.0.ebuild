@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -33,3 +33,7 @@ unset lang LANGS SPELL_DICTS_DEPEND
 RDEPEND+="
 	dev-python/nltk
 	dev-python/hyphenator"
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-${PV}-namespace.patch"
+}
