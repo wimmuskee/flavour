@@ -9,9 +9,9 @@ inherit eutils git-r3
 DESCRIPTION="Extracts and cleans text from Wikipedia database dump."
 HOMEPAGE="http://medialab.di.unipi.it/wiki/Wikipedia_Extractor"
 EGIT_REPO_URI="git://github.com/bwbaugh/wikipedia-extractor.git"
-EGIT_COMMIT="b891647abd3f9b3a86a05f0327e1f9222d3230db"
+EGIT_COMMIT="068fc17d13d33a8a2d8ec1730fa17c47b316cf50"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
 DEPEND=""
 RDEPEND="${DEPEND}
