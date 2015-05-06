@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ EGIT_REPO_URI="git://github.com/wimmuskee/shell-oaiharvester.git"
 DESCRIPTION="OAI-PMH harvester built in shell."
 HOMEPAGE="https://github.com/wimmuskee/shell-oaiharvester"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
 DEPEND="sys-apps/help2man"
 RDEPEND="app-arch/xz-utils
