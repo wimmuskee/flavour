@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,5 +25,5 @@ RDEPEND=">=dev-python/requests-1.1.0
 # mock, nose, unittest2
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-setup.patch"
+	epatch "${FILESDIR}/${PN}-setupnew.patch"
 }
