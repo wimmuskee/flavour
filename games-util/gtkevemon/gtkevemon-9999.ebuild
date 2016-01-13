@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/gtkevemon/gtkevemon-9999.ebuild,v 1.4 2014/05/08 00:45:31 wired Exp $
 
 EAPI=4
 
@@ -25,7 +24,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="
-	dev-cpp/gtkmm:2.4
+	dev-cpp/gtkmm:3.0
 	dev-libs/libxml2
 "
 DEPEND="${DEPEND}
