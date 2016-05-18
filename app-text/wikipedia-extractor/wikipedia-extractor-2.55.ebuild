@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ inherit eutils git-r3
 DESCRIPTION="Extracts and cleans text from Wikipedia database dump."
 HOMEPAGE="http://medialab.di.unipi.it/wiki/Wikipedia_Extractor"
 EGIT_REPO_URI="git://github.com/bwbaugh/wikipedia-extractor.git"
-EGIT_COMMIT="cf761347c0a085e92cdfa6738d62cb50e268a05f"
+EGIT_COMMIT="e98452eb08d317ad2bcdd378294d5a42e35abe01"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}
 
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-shebang.patch"
+	epatch "${FILESDIR}/${PN}-shebang-env.patch"
 }
 
 src_install() {
