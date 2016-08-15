@@ -9,18 +9,18 @@ EAPI="2"
 
 inherit eutils
 
-DESCRIPTION="A powerful and versatile open source solution for data integration."
+DESCRIPTION="FCam is an open-source C++ API for easy and precise control of digital cameras."
 HOMEPAGE="http://fcam.garage.maemo.org/"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-SRC_URI=""
+SRC_URI="https://garage.maemo.org/frs/download.php/9547/FCam.zip"
 RESTRICT="mirror"
 DEPEND="app-arch/unzip"
 
 pkg_nofetch() {
 	einfo "Please download FCam.zip yourself"
-	einfo "from http://garage.maemo.org/frs/download.php/9547/FCam.zip and place them in ${DISTDIR}"
+	einfo "from https://garage.maemo.org/frs/download.php/9547/FCam.zip and place them in ${DISTDIR}"
 	einfo ""
 	einfo "The website has an SSL certificate problem."
 }
