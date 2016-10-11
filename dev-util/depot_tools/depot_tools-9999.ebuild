@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion
+inherit git-r3
 
 DESCRIPTION="Chromium uses a package of scripts, the depot_tools, to manage interaction with the Chromium source code repository and the Chromium development process."
-HOMEPAGE="http://dev.chromium.org/developers/how-tos/install-depot-tools"
-ESVN_REPO_URI="http://src.chromium.org/chrome/trunk/tools/depot_tools"
+HOMEPAGE="https://dev.chromium.org/developers/how-tos/install-depot-tools"
+EGIT_REPO_URI="https://chromium.googlesource.com/chromium/tools/depot_tools.git"
 LICENSE="GPL2"
 SLOT="0"
 KEYWORDS="~amd64"
