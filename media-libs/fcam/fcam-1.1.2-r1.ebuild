@@ -1,3 +1,4 @@
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,6 +18,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 SRC_URI="https://garage.maemo.org/frs/download.php/9547/FCam.zip"
 RESTRICT="mirror"
 DEPEND="app-arch/unzip"
+RDEPEND=""
 
 pkg_nofetch() {
 	einfo "Please download FCam.zip yourself"
@@ -35,7 +37,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dodoc README
+	dodoc README license.txt
 }
-
-
