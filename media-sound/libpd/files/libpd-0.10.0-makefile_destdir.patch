@@ -1,0 +1,11 @@
+--- libpd-0.10.0/Makefile.orig	2016-11-21 18:18:03.973755164 +0100
++++ libpd-0.10.0/Makefile	2016-11-21 18:18:56.005751508 +0100
+@@ -132,7 +132,7 @@
+ 	pure-data/src/d_fft_fftsg_h.o pure-data/src/x_qlist.o
+ 
+ # default install location
+-prefix=/usr/local
++prefix=$(DESTDIR)/usr/local
+ 
+ JNI_FILE = libpd_wrapper/util/ringbuffer.c libpd_wrapper/util/z_queued.c jni/z_jni_plain.c
+ JNIH_FILE = jni/z_jni.h
