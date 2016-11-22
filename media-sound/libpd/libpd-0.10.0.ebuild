@@ -15,13 +15,11 @@ HOMEPAGE="http://www/libpd.cc"
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="python"
+IUSE="examples python"
 DEPEND="python? (
 		dev-lang/swig
 	)"
 RDEPEND=""
-# for some reason einstalldocs does not find the docs, when doing the python install
-#DOCS=( "CHANGES.txt" "LICENSE.txt" "README.md" )
 PATCHES=(
 	"${FILESDIR}/${P}-makefile_destdir.patch"
 	"${FILESDIR}/${P}-makefile_mkdir_lib.patch" )
@@ -45,4 +43,17 @@ src_install() {
 		distutils-r1_src_install || die "distutils install python failed"
 		popd
 	fi
+
+	# examples
+	if use examples; then
+		if use python; then
+			insinto "/usr/share/${PN}/examples/python"
+			doins samples/python/*
+		fi
+	fi
+
+	# docs
+	dodoc CHANGES.txt
+	dodoc LICENSE.txt
+	dodoc README.md
 }
