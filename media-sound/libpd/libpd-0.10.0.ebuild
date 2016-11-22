@@ -19,7 +19,9 @@ IUSE="examples python"
 DEPEND="python? (
 		dev-lang/swig
 	)"
-RDEPEND=""
+RDEPEND="python? (
+		dev-python/pyaudio
+	)"
 PATCHES=(
 	"${FILESDIR}/${P}-makefile_destdir.patch"
 	"${FILESDIR}/${P}-makefile_mkdir_lib.patch" )
