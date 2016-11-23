@@ -23,7 +23,6 @@ RDEPEND="python? (
 		dev-python/pyaudio
 	)"
 PATCHES=(
-	"${FILESDIR}/${P}-makefile_destdir.patch"
 	"${FILESDIR}/${P}-makefile_mkdir_lib.patch" )
 
 src_compile() {
@@ -38,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake prefix="${D}/usr/local" install || die "emake install failed"
 
 	if use python; then
 		pushd python
@@ -47,11 +46,9 @@ src_install() {
 	fi
 
 	# examples
-	if use examples; then
-		if use python; then
-			insinto "/usr/share/${PN}/examples/python"
-			doins samples/python/*
-		fi
+	if use examples && use python; then
+		insinto "/usr/share/${PN}/examples/python"
+		doins samples/python/*
 	fi
 
 	# docs
