@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="6"
-PYTHON_COMPAT=( python{2_7,3_2,3_4,3_5} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1 git-r3
 
@@ -23,6 +23,7 @@ RDEPEND="python? (
 		dev-python/pyaudio
 	)"
 PATCHES=(
+	"${FILESDIR}/${P}-makefile-soname.patch"
 	"${FILESDIR}/${P}-makefile_mkdir_lib.patch" )
 
 src_compile() {
@@ -37,7 +38,7 @@ src_compile() {
 }
 
 src_install() {
-	emake prefix="${D}/usr/local" install || die "emake install failed"
+	emake prefix="${D}/usr" install || die "emake install failed"
 
 	if use python; then
 		pushd python
