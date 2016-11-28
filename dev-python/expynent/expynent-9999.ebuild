@@ -9,7 +9,7 @@ inherit distutils-r1 git-r3
 
 EGIT_REPO_URI="git://github.com/lk-geimfari/expynent.git"
 DESCRIPTION="Library that provides regex patterns."
-HOMEPAGE="https://github.com/peter17/pijnu"
+HOMEPAGE="https://github.com/lk-geimfari/expynent"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
