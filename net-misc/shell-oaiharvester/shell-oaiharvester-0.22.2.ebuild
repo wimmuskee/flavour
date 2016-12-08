@@ -1,16 +1,16 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="6"
 
 inherit autotools
 
 DESCRIPTION="OAI-PMH harvester built in shell."
 HOMEPAGE="https://github.com/wimmuskee/shell-oaiharvester"
-SRC_URI="https://github.com/wimmuskee/${PN}/archive/v${PV}.tar.gz"
+SRC_URI="https://github.com/wimmuskee/${PN}/archive/${PV}.tar.gz"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 LICENSE="GPL-3"
 RESTRICT="mirror"
 DEPEND="sys-apps/help2man"
@@ -20,8 +20,8 @@ RDEPEND="app-arch/xz-utils
 	net-misc/curl
 	sys-devel/bc"
 
-
 src_prepare() {
+	eapply_user
 	eautoreconf
 }
 

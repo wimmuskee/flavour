@@ -1,14 +1,14 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="6"
 
-inherit autotools git-2
+inherit autotools git-r3
 
-EGIT_REPO_URI="git://github.com/wimmuskee/shell-oaiharvester.git"
 DESCRIPTION="OAI-PMH harvester built in shell."
 HOMEPAGE="https://github.com/wimmuskee/shell-oaiharvester"
+EGIT_REPO_URI="git://github.com/wimmuskee/shell-oaiharvester.git"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
@@ -19,8 +19,8 @@ RDEPEND="app-arch/xz-utils
 	net-misc/curl
 	sys-devel/bc"
 
-
 src_prepare() {
+	eapply_user
 	eautoreconf
 }
 
