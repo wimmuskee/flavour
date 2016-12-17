@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="6"
 
 DESCRIPTION="Flag icons from famfamfam.com."
 HOMEPAGE="http://www.famfamfam.com/lab/icons/flags/"
@@ -11,9 +11,11 @@ LICENSE="FreeArt"
 SLOT="0"
 IUSE="+png gif"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86"
+REQUIRED_USE="|| ( png gif )"
+DOCS="readme.txt"
 
 src_install() {
-	dodoc readme.txt
+	default
 	dest="/usr/share/icons/famfamfam/flags"
 
 	if use png; then
