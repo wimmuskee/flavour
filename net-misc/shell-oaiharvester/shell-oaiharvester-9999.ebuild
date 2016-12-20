@@ -20,7 +20,7 @@ RDEPEND="app-arch/xz-utils
 	sys-devel/bc"
 
 src_prepare() {
-	eapply_user
+	default
 	eautoreconf
 }
 
