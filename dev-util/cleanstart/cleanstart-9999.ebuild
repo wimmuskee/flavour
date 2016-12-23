@@ -14,6 +14,8 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
 
 src_install() {
+	default
+
 	dobin cleanstart-create
 	dobin cleanstart-chroot
 
@@ -21,5 +23,8 @@ src_install() {
 	doins share/*
 
 	insinto /etc/cleanstart
-	doins cleanstart.conf
+	doins config/cleanstart.conf
+
+	insinto /etc/cleanstart/profiles
+	doins config/profile.default
 }
