@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<bugs-to>https://github.com/libpd/libpd/issues</bugs-to>
+		<remote-id type="github">libpd/libpd</remote-id>
+	</upstream>
+</pkgmetadata>
