@@ -1,0 +1,13 @@
+--- pure-data-0.47-1/Makefile.am.orig	2017-01-03 16:45:42.716243657 +0100
++++ pure-data-0.47-1/Makefile.am	2017-01-03 16:45:58.810244194 +0100
+@@ -19,10 +19,6 @@
+ EXTRA_SUBDIRS += portaudio
+ endif
+ 
+-if PORTMIDI
+-EXTRA_SUBDIRS += portmidi
+-endif
+-
+ # files that are included but not built
+ EXTRA_DIST = LICENSE.txt README.txt INSTALL.txt
+ 

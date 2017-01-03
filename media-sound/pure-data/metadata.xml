@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<use>
+		<flag name="portmidi">Enable portmidi support.</flag>
+	</use>
 	<upstream>
 		<remote-id type="github">pure-data/pure-data</remote-id>
 	</upstream>

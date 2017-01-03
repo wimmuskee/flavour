@@ -1,0 +1,13 @@
+--- pure-data-0.47-1/src/Makefile.am.orig	2017-01-03 16:47:16.564246785 +0100
++++ pure-data-0.47-1/src/Makefile.am	2017-01-03 16:48:11.263248609 +0100
+@@ -98,8 +98,8 @@
+ endif
+ 
+ if PORTMIDI
+-INCLUDES += -I$(top_srcdir)/portmidi/pm_common -I$(top_srcdir)/portmidi/porttime
+-pd_LDADD += $(top_builddir)/portmidi/libportmidi.la
++pd_CFLAGS += -DUSEAPI_PORTMIDI
++pd_LDADD  += @PORTMIDI_LIBS@
+ pd_SOURCES += s_midi_pm.c
+ endif
+ 
