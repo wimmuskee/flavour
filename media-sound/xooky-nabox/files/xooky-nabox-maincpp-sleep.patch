@@ -1,0 +1,10 @@
+--- xooky-nabox-9999/src/main.cpp.orig	2017-01-03 08:53:57.596300188 +0100
++++ xooky-nabox-9999/src/main.cpp	2017-01-03 08:56:19.395304914 +0100
+@@ -3,6 +3,7 @@
+ #include <string>
+ #include <stdlib.h>
+ #include <getopt.h>
++#include <unistd.h>
+ 
+ #include "z_libpd.h"
+ #include <jack/jack.h>

@@ -1,28 +1,26 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="6"
 
-inherit eutils git-2
+inherit git-r3
 
-EGIT_REPO_URI="git://github.com/rvega/XookyNabox.git"
-
+EGIT_REPO_URI="https://github.com/rvega/XookyNabox.git"
+EGIT_SUBMODULES=()
 DESCRIPTION="A C++ application for running PureData patches on embedded devices."
-HOMEPAGE="http://github.com/rvega/XookyNabox"
+HOMEPAGE="https://github.com/rvega/XookyNabox"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="examples"
 # depend on libpd from flavour overlay
 DEPEND="media-sound/libpd
-	media-sound/jack-audio-connection-kit"
+	virtual/jack"
 RDEPEND="${DEPEND}"
-
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-makeinclude.patch"
-	epatch "${FILESDIR}/${PN}-maincpp.patch"
-}
+PATCHES=(
+	"${FILESDIR}/${PN}-makeinclude.patch"
+	"${FILESDIR}/${PN}-maincpp.patch"
+	"${FILESDIR}/${PN}-maincpp-sleep.patch")
 
 src_compile() {
 	cd "${S}/src"

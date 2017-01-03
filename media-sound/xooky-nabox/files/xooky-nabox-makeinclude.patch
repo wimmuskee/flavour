@@ -1,11 +1,11 @@
---- src/makefile.orig	2012-10-22 22:17:55.000000000 +0200
-+++ src/makefile	2012-10-22 22:18:14.000000000 +0200
+--- xooky-nabox-9999/src/makefile.orig	2012-10-22 22:17:55.000000000 +0200
++++ xooky-nabox-9999/src/makefile	2012-10-22 22:18:14.000000000 +0200
 @@ -8,7 +8,7 @@
  # Parameters
  COMPILER = g++
  LINKER = g++
 -COMPILER_FLAGS = -Wall -g -c -I../vendor/libpd/pure-data/src -I../vendor/libpd/libpd_wrapper
-+COMPILER_FLAGS = -Wall -g -c -I/usr/include/pd
++COMPILER_FLAGS = -Wall -g -c -I/usr/include/libpd
  LINKER_FLAGS = -lpd -ljack
  CPP_FILES = $(wildcard *.cpp)
  OBJECTS = $(notdir $(CPP_FILES:.cpp=.o)) # List of .cpp files with .o extension
