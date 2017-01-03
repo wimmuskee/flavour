@@ -16,7 +16,8 @@ RESTRICT="mirror"
 IUSE="jack"
 S="${WORKDIR}/${PN}-0.47-1"
 DOCS=( "LICENSE.txt" "README.txt" )
-DEPEND=""
+DEPEND="sys-devel/gettext
+	sys-libs/glibc"
 RDEPEND="media-libs/alsa-lib
 	dev-lang/tcl
 	dev-lang/tk
@@ -24,6 +25,8 @@ RDEPEND="media-libs/alsa-lib
 "
 
 src_prepare() {
+	mv "${S}/portaudio/configure.in" "${S}/portaudio/configure.ac"
+
 	default
 	mkdir -p "${S}/m4/generated"
 	eautoreconf
@@ -39,10 +42,13 @@ src_configure() {
 		myconf="${myconf} --enable-jack"
 	fi
 
-	./configure --prefix="${D}/usr" ${myconf}
+	./configure \
+		--prefix="${EPREFIX}/usr" \
+		--docdir="${EPREFIX}/usr/share/doc/${PF}/html" \
+		${myconf}
 }
 
 src_install() {
-	emake DESTDIR="${D}" prefix="/usr" install || die "make install failed"
+	emake DESTDIR="${D}" libpddir="/usr" install || die "make install failed"
 	einstalldocs
 }
