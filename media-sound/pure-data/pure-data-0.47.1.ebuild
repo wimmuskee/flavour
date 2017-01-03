@@ -33,22 +33,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
-
-	#  insecure RUNPATHs in portaudio
-	myconf="${myconf} --disable-portaudio"
-
-	if use jack; then
-		myconf="${myconf} --enable-jack"
-	fi
-
-	./configure \
-		--prefix="${EPREFIX}/usr" \
-		--docdir="${EPREFIX}/usr/share/doc/${PF}/html" \
-		${myconf}
-}
-
-src_install() {
-	emake DESTDIR="${D}" libpddir="/usr" install || die "make install failed"
-	einstalldocs
+	#  insecure RUNPATHs in portaudio, so disable for now
+	econf --disable-portaudio \
+		$(use_enable jack)
 }
