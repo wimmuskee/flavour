@@ -12,15 +12,16 @@ EGIT_REPO_URI="https://github.com/pure-data/pure-data.git"
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS=""
-RESTRICT="mirror"
-IUSE="jack nls +oss portmidi"
+RESTRICT="${RESTRICT} mirror"
+IUSE="+alsa jack nls +oss portaudio portmidi"
 REQUIRED_USE="portmidi? ( !oss )"
 DOCS=( "LICENSE.txt" "README.txt" )
 DEPEND="
-	media-libs/alsa-lib
 	sys-libs/glibc
+	alsa? ( media-libs/alsa-lib )
 	jack? ( virtual/jack )
 	nls? ( sys-devel/gettext )
+	portaudio? ( media-libs/portaudio )
 	portmidi? ( media-libs/portmidi )
 "
 RDEPEND="${DEPEND}
@@ -39,12 +40,14 @@ src_prepare() {
 }
 
 src_configure() {
-	#  insecure RUNPATHs in portaudio, so disable for now
-	# portmidi, also disable usage of locally provided portmidi
-	econf --disable-portaudio \
+	# portmidi and portaudio, also disable usage of locally provided code
+	econf \
+		$(use_enable alsa) \
 		$(use_enable jack) \
 		$(use_enable nls locales) \
 		$(use_enable oss) \
 		$(use_enable portmidi) \
-		$(use_with !portmidi local-portmidi) 
+		$(use_with !portmidi local-portmidi) \
+		$(use_enable portaudio) \
+		$(use_with !portaudio local-portaudio)
 }
