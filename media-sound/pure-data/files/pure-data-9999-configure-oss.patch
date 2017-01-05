@@ -1,0 +1,14 @@
+--- pure-data-9999/configure.ac.orig	2017-01-05 06:54:56.932352713 +0100
++++ pure-data-9999/configure.ac	2017-01-05 06:55:53.964351550 +0100
+@@ -273,8 +273,9 @@
+ AC_ARG_ENABLE([oss],
+     [AS_HELP_STRING([--disable-oss], [do not use OSS driver])],
+     [oss=$enableval], [oss=yes])
+-AC_CHECK_HEADER(sys/soundcard.h, [oss=yes], [oss=no])
+-
++if test x$oss = xyes ; then
++	AC_CHECK_HEADER(sys/soundcard.h, [oss=yes], [oss=no])
++fi
+ ##### ALSA #####
+ # shouldn't we use AM_PATH_ALSA from /usr/share/aclocal/alsa.m4
+ # alternatively we could use pkg-config

@@ -4,35 +4,35 @@
 
 EAPI="6"
 
-inherit autotools
+inherit autotools git-r3
 
 DESCRIPTION="A real-time graphical programming environment for audio and graphics processing."
 HOMEPAGE="https://puredata.info/"
-SRC_URI="https://github.com/${PN}/${PN}/archive/0.47-1.tar.gz"
+EGIT_REPO_URI="https://github.com/pure-data/pure-data.git"
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS=""
 RESTRICT="mirror"
-IUSE="jack portmidi"
-S="${WORKDIR}/${PN}-0.47-1"
+IUSE="jack nls +oss portmidi"
+REQUIRED_USE="portmidi? ( !oss )"
 DOCS=( "LICENSE.txt" "README.txt" )
-DEPEND="sys-devel/gettext
-	sys-libs/glibc"
-RDEPEND="media-libs/alsa-lib
-	dev-lang/tcl
-	dev-lang/tk
+DEPEND="
+	media-libs/alsa-lib
+	sys-libs/glibc
 	jack? ( virtual/jack )
+	nls? ( sys-devel/gettext )
 	portmidi? ( media-libs/portmidi )
 "
+RDEPEND="${DEPEND}
+	dev-lang/tcl
+	dev-lang/tk
+"
+
 PATCHES=(
-	"${FILESDIR}/${P}-configure-portmidi.patch"
-	"${FILESDIR}/${P}-makefile-portmidi.patch"
-	"${FILESDIR}/${P}-srcmakefile-portmidi.patch"
+	"${FILESDIR}/${P}-configure-oss.patch"
 )
 
 src_prepare() {
-	mv "${S}/portaudio/configure.in" "${S}/portaudio/configure.ac"
-
 	default
 	mkdir -p "${S}/m4/generated"
 	eautoreconf
@@ -40,7 +40,11 @@ src_prepare() {
 
 src_configure() {
 	#  insecure RUNPATHs in portaudio, so disable for now
+	# portmidi, also disable usage of locally provided portmidi
 	econf --disable-portaudio \
 		$(use_enable jack) \
-		$(use_enable portmidi)
+		$(use_enable nls locales) \
+		$(use_enable oss) \
+		$(use_enable portmidi) \
+		$(use_with !portmidi local-portmidi) 
 }
