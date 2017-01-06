@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,8 +12,8 @@ HOMEPAGE="http://pypi.python.org/pypi/vdexcsv"
 SRC_URI="https://github.com/bluedynamics/${PN}/archive/${PV}.zip"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
-RESTRICT="mirror"
+KEYWORDS="~amd64 ~x86"
+RESTRICT="${RESTRICT} mirror"
 IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
