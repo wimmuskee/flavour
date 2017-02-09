@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 IUSE=""
-DEPEND=""
-RDEPEND=">=dev-python/requests-1.1.0"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/requests-1.1.0[${PYTHON_USEDEP}]"
 
 # not including test functionality
 # for this, the following are required:
