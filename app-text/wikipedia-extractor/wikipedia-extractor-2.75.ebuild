@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,7 @@ inherit python-single-r1 git-r3
 DESCRIPTION="Extracts and cleans text from Wikipedia database dump."
 HOMEPAGE="http://medialab.di.unipi.it/wiki/Wikipedia_Extractor"
 EGIT_REPO_URI="git://github.com/attardi/wikiextractor.git"
-EGIT_COMMIT="f1989bcc11ac6fc0bf7df514bd110a00fca794ed"
+EGIT_COMMIT="5414b7fda84ff65ed5564e4427f6c49a9ab810c8"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
