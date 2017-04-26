@@ -1,9 +1,0 @@
---- setup.py.orig	2015-02-24 11:00:31.537810691 +0100
-+++ setup.py	2015-02-24 11:00:46.655811064 +0100
-@@ -13,6 +13,5 @@
-     license = "GPL-2",
-     keywords = "text difficulty readability score",
-     packages=find_packages(),
--    namespace_packages=['readability_score'],
-     long_description=read('README')
- )
