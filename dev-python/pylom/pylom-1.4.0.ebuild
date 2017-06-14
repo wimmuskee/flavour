@@ -6,15 +6,17 @@ EAPI="5"
 
 PYTHON_COMPAT=( python{2_7,3_4} )
 
-inherit distutils-r1 git-r3
+inherit distutils-r1
 
-EGIT_REPO_URI="git://github.com/kennisnet/pylom.git"
+SRC_URI="https://github.com/kennisnet/${PN}/archive/${PV}.tar.gz"
 DESCRIPTION="Python class for reading IMS-LOM records."
 HOMEPAGE="https://github.com/kennisnet/pylom"
-LICENSE="GPL-2"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+RESTRICT="mirror"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	dev-python/lxml"
+
