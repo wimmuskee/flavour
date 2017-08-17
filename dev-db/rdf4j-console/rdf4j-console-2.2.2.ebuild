@@ -27,14 +27,14 @@ SLOT="0"
 RESTRICT="mirror"
 KEYWORDS=""
 IUSE=""
-DEPEND=""
-RDEPEND=">=virtual/jre-1.8
-	dev-java/commons-codec
-	dev-java/commons-cli
-	>=dev-java/commons-logging-1.2
+DEPEND=">=virtual/jre-1.8
+	dev-java/commons-codec:0
+	dev-java/commons-cli:1
+	dev-java/commons-logging:0
 	dev-java/guava:18
-	dev-java/logback
-	dev-java/slf4j-api"
+	dev-java/logback:0
+	dev-java/slf4j-api:0"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	mkdir ${S}
@@ -45,10 +45,12 @@ src_unpack() {
 
 src_install() {
 	java-pkg_jarinto /opt/${P}/lib/
+	
 	for f in ${A}; do
 		new=$(echo ${f} | sed 's|-'"${PV}"'||')
 		java-pkg_newjar ${S}/${f} ${new}
 	done
 
+	java-pkg_addcp $(java-pkg_getjars commons-codec,commons-cli-1,commons-logging,guava-18,logback,slf4j-api)
 	java-pkg_dolauncher ${PN} --main org.eclipse.rdf4j.console.Console
 }
