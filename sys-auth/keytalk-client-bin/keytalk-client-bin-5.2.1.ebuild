@@ -21,7 +21,7 @@ S="${WORKDIR}/keytalkclient-${PV}"
 
 src_unpack() {
 	default
-	tar -xzf KeyTalkClient-${PV}-debian9-x64.tgz
+	tar -xzf KeyTalkClient-${PV}-debian8_ubuntu16.04-x64.tgz
 }
 
 src_install() {
