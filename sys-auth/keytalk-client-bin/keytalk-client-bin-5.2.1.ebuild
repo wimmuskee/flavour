@@ -25,16 +25,15 @@ src_unpack() {
 }
 
 src_install() {
-	exeinto /usr/bin/keytalk
-	doexe ktclient
-	doexe ktconfig
-	doexe ktconfupdater
-	doexe ktconfigtool
-	doexe ktprgen
-	doexe hwutils
+	dobin ktclient
+	dobin ktconfig
+	dobin ktconfupdater
+	dobin ktconfigtool
+	dobin ktprgen
+	dobin hwutils
 
-    fperms 4755 /usr/bin/keytalk/ktconfig
-    fperms 4755 /usr/bin/keytalk/hwutils
+    fperms 4755 /usr/bin/ktconfig
+    fperms 4755 /usr/bin/hwutils
 
 	dolib.so libtalogger.so
 
