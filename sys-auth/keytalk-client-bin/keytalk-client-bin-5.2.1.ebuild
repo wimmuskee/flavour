@@ -15,6 +15,7 @@ LICENSE="KeyTalk"
 RESTRICT="mirror"
 DEPEND="app-arch/unzip"
 RDEPEND="app-misc/ca-certificates
+    <dev-libs/openssl-1.1
 	sys-apps/hdparm
 	sys-process/psmisc"
 S="${WORKDIR}/keytalkclient-${PV}"
