@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="6"
-PYTHON_COMPAT=( python{2_7,3_{4,5}} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/yougov/fuzzy"
 SRC_URI="https://pypi.io/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 RESTRICT="mirror"
 DEPEND="dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
