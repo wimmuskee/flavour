@@ -6,16 +6,16 @@ EAPI="6"
 
 DESCRIPTION="SoapUI is a free and open source cross-platform Functional Testing solution."
 HOMEPAGE="http://www.soapui.org/"
-LICENSE="EUPL-1.1"
+LICENSE="SmartBear"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-SRC_URI="http://cdn01.downloads.smartbear.com/${PN}/${PV}/SoapUI-${PV}-linux-bin.tar.gz"
-RESTRICT="${RESTRICT} strip mirror"
+SRC_URI="https://s3.amazonaws.com/downloads.eviware/soapuios/${PV}/SoapUI-${PV}-linux-bin.tar.gz"
+RESTRICT="strip mirror"
 RDEPEND=">=virtual/jre-1.6"
 
 INSTALLDIR="/opt/SoapUI"
 S="${WORKDIR}/SoapUI-${PV}"
-DOCS="README.md LICENSE.txt RELEASENOTES.txt"
+DOCS="README.md RELEASENOTES.txt SmartBearLicense.txt SmartBearLicense.md"
 
 src_install() {
 	# application
@@ -24,6 +24,10 @@ src_install() {
 
 	# executables
 	chmod 755 ${D}/${INSTALLDIR}/bin/*.sh
+
+	# license
+	mv SmartBear\ License\ Terms\ of\ Use.txt SmartBearLicense.txt
+	mv SmartBear\ License\ Terms\ of\ Use.md SmartBearLicense.md
 
 	einstalldocs
 }
