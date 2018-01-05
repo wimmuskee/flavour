@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="Scripts to setup and use Gentoo test chroot environments"
 HOMEPAGE="https://github.com/wimmuskee/cleanstart"
-EGIT_REPO_URI="git://github.com/wimmuskee/cleanstart.git"
+EGIT_REPO_URI="https://github.com/wimmuskee/cleanstart.git"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"

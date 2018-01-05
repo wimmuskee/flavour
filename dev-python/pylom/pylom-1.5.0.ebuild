@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,5 +21,5 @@ RDEPEND="
 	dev-python/lxml"
 
 python_test() {
-    "${PYTHON}" -m unittest discover -s test || die "Test failed with ${EPYTHON}"
+	"${PYTHON}" -m unittest discover -s test || die "Test failed with ${EPYTHON}"
 }
