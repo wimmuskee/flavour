@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,8 +8,8 @@ DESCRIPTION="SoapUI is a free and open source cross-platform Functional Testing 
 HOMEPAGE="http://www.soapui.org/"
 LICENSE="EUPL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-SRC_URI="http://smartbearsoftware.com/distrib/${PN}/${PV}/SoapUI-${PV}-linux-bin.tar.gz"
+KEYWORDS="amd64 x86"
+SRC_URI="http://smartbearsoftware.com/distrib/soapui/${PV}/SoapUI-${PV}-linux-bin.tar.gz"
 RESTRICT="strip mirror"
 RDEPEND=">=virtual/jre-1.6"
 
