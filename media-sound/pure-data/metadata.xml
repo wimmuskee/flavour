@@ -5,6 +5,7 @@
 		<flag name="portmidi">Enable portmidi support.</flag>
 	</use>
 	<upstream>
+		<bugs-to>https://github.com/pure-data/pure-data/issues</bugs-to>
 		<remote-id type="github">pure-data/pure-data</remote-id>
 	</upstream>
 </pkgmetadata>
