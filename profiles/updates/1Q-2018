@@ -1,1 +1,2 @@
 move dev-util/soapui dev-util/soapui-bin
+move dev-db/rdf4j-console dev-db/rdf4j-console-bin
