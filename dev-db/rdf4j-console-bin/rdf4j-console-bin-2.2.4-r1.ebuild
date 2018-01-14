@@ -26,7 +26,7 @@ HOMEPAGE="http://rdf4j.org/"
 LICENSE="EPL-1.0"
 SLOT="0"
 RESTRICT="mirror"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND=">=virtual/jre-1.8:=
 	dev-java/commons-codec:0
