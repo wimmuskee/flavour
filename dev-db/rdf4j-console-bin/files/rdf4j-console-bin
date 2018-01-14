@@ -1,0 +1,7 @@
+#!/bin/sh
+# custom launcher provided by package ebuild
+
+JAVA_OPT=-mx512m
+
+source "/usr/share/rdf4j-console-bin/package.env"
+java $JAVA_OPT -cp ${CLASSPATH} org.eclipse.rdf4j.console.Console $*
