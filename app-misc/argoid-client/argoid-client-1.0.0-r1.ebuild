@@ -18,3 +18,12 @@ IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-lang/python-exec-2"
 S="${WORKDIR}/argoid-${PV}"
+
+python_install() {
+	# When cross-compiling, package installs in lib64
+	# where python-exec cannot find it.
+	# There is probably a better way, but for now only installing
+	# on arm, and always install in /usr/lib
+	python_sitedir=$(python_get_sitedir | sed 's/lib64/lib/')
+	distutils-r1_python_install --install-lib="${python_sitedir}"
+}
