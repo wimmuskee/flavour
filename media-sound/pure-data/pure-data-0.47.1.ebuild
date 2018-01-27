@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION="A real-time graphical programming environment for audio and graphics processing."
 HOMEPAGE="https://puredata.info/"
-SRC_URI="https://github.com/${PN}/${PN}/archive/0.47-1.tar.gz"
+SRC_URI="https://github.com/${PN}/${PN}/archive/0.47-1.tar.gz -> ${P}.tar.gz"
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS=""

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION="OAI-PMH harvester built in shell."
 HOMEPAGE="https://github.com/wimmuskee/shell-oaiharvester"
-SRC_URI="https://github.com/wimmuskee/${PN}/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/wimmuskee/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 SLOT="0"
 KEYWORDS="amd64 x86"
 LICENSE="GPL-3"

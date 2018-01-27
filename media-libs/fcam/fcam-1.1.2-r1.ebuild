@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://fcam.garage.maemo.org/"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-SRC_URI="https://garage.maemo.org/frs/download.php/9547/FCam.zip"
+SRC_URI="https://garage.maemo.org/frs/download.php/9547/FCam.zip -> ${P}.zip"
 RESTRICT="mirror"
 DEPEND="app-arch/unzip"
 RDEPEND=""
