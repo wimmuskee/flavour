@@ -4,6 +4,7 @@
 
 EAPI="6"
 PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
+PYTHON_REQ_USE="threads"
 
 inherit distutils-r1
 
@@ -15,8 +16,10 @@ SLOT="0"
 KEYWORDS="~arm"
 RESTRICT="mirror"
 IUSE=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-lang/python-exec-2
+	dev-embedded/adafruit-beaglebone-io-python
 	dev-python/jsonschema"
 S="${WORKDIR}/argoid-${PV}"
 
