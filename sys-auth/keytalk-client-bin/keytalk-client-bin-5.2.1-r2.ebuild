@@ -43,11 +43,16 @@ src_install() {
 	doins version
 	doins devstage
 	doins cr.conf
+
+	insinto /usr/share/keytalk
+	doins ${FILESDIR}/empty-user.ini
 }
 
 pkg_postinst() {
-	einfo "Before letting your users call ktclient, run:"
-	einfo "    emerge --config =${CATEGORY}/${PF}"
+	if [[ ! ${REPLACING_VERSIONS} ]]; then
+		einfo "Before letting your users call ktclient, run:"
+		einfo "    emerge --config =${CATEGORY}/${PF}"
+	fi
 }
 
 pkg_config() {
@@ -60,8 +65,8 @@ pkg_config() {
 	echo ${users} | sed -n 1'p' | tr ',' '\n' | while read user; do
 		einfo "Setting up ${user}"
 		homedir=$(eval echo "~${user}")
-		mkdir ${homedir}/.keytalk
-		cp ${FILESDIR}/empty-user.ini ${homedir}/.keytalk/user.ini
+		mkdir -p ${homedir}/.keytalk
+		cp /usr/share/keytalk-client/empty-user.ini ${homedir}/.keytalk/user.ini
 		chown -R ${user}:users ${homedir}/.keytalk
 	done
 	einfo ""
