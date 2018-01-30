@@ -66,7 +66,7 @@ pkg_config() {
 		einfo "Setting up ${user}"
 		homedir=$(eval echo "~${user}")
 		mkdir -p ${homedir}/.keytalk
-		cp /usr/share/keytalk-client/empty-user.ini ${homedir}/.keytalk/user.ini
+		cp /usr/share/keytalk/empty-user.ini ${homedir}/.keytalk/user.ini
 		chown -R ${user}:users ${homedir}/.keytalk
 	done
 	einfo ""
