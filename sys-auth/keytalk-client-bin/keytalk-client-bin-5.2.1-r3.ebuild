@@ -17,6 +17,7 @@ DEPEND="app-arch/unzip"
 RDEPEND="app-misc/ca-certificates
 	<dev-libs/openssl-1.1
 	sys-apps/hdparm
+	sys-apps/findutils
 	sys-process/psmisc"
 S="${WORKDIR}/keytalkclient-${PV}"
 
@@ -32,6 +33,7 @@ src_install() {
 	dobin ktconfigtool
 	dobin ktprgen
 	dobin hwutils
+	dobin ${FILESDIR}/keytalk-client
 
 	fperms 4755 /usr/bin/ktconfig
 	fperms 4755 /usr/bin/hwutils
@@ -49,30 +51,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [[ ! ${REPLACING_VERSIONS} ]]; then
-		einfo "Before letting your users call ktclient, run:"
-		einfo "    emerge --config =${CATEGORY}/${PF}"
-	fi
-}
-
-pkg_config() {
 	# needed after install command
 	ktconfupdater --set-install-dir /usr/bin
 
-	# setting a user owned .keytalk dir with
-	# empty user.ini (instead of root owned)
-	users=$(grep users /etc/group | cut -d ":" -f 4)
-	echo ${users} | sed -n 1'p' | tr ',' '\n' | while read user; do
-		einfo "Setting up ${user}"
-		homedir=$(eval echo "~${user}")
-		mkdir -p ${homedir}/.keytalk
-		cp /usr/share/keytalk/empty-user.ini ${homedir}/.keytalk/user.ini
-		chown -R ${user}:users ${homedir}/.keytalk
-	done
-	einfo ""
-	einfo "Each user can now issue the following:"
-	einfo "    ktconfig --rccd-path <rccd-url>"
-	einfo ""
-	einfo "And run the following to get or refresh a certificate:"
-	einfo "    ktclient --user <user> --interactive --save-pfx"
+	einfo "Run the keytalk-client command as a user to"
+	einfo "setup initially and get or refresh a certificate."
 }
