@@ -34,8 +34,8 @@ if [ ! -d ${KEYTALK_DIR} ]; then
     read -s -p "password: " PASSWORD
     echo "PASSWORD=\"${PASSWORD}\"" >> ${KEYTALK_DIR}/credentials
 
-    echo "First time run, executing ktconfig"
-    ktconfig --rccd-path "${RCCD}" &> /dev/null || true
+    echo "First time run, execute ktconfig as root"
+    echo "ktconfig --rccd-path \"${RCCD}\" &> /dev/null || true"
 fi
 
 source ${KEYTALK_DIR}/config
