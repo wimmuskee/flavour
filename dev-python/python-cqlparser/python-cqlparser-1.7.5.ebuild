@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="6"
-PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
@@ -18,3 +18,9 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/cqlparser-${PV}"
+
+python_test() {
+    # only doing single test to test python compatibility
+    # need seecr test deps for lots of the other tests
+	"${PYTHON}" test/cqlparsertest.py || die "Test failed with ${EPYTHON}"
+}
