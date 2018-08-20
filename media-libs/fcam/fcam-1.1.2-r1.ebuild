@@ -6,7 +6,7 @@
 # examples USE, need QT
 # docs USE, need doxygen
 
-EAPI="2"
+EAPI="6"
 
 inherit eutils
 
