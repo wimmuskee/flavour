@@ -1,0 +1,13 @@
+--- libpd-0.11.0/Makefile.orig	2018-11-02 07:14:24.504237280 +0100
++++ libpd-0.11.0/Makefile	2018-11-02 07:14:53.566236878 +0100
+@@ -248,8 +248,8 @@
+ 	fi
+ 	install -d $(libdir)
+ 	install -m 755 $(LIBPD) $(libdir)
+-	if [ -e $(LIBPD_IMPLIB) ]; then install -m 755 $(LIBPD_IMPLIB) $(libdir); fi
+-	if [ -e $(LIBPD_DEF) ]; then install -m 755 $(LIBPD_DEF) $(libdir); fi
++	if [ -e '$(LIBPD_IMPLIB)' ]; then install -m 755 $(LIBPD_IMPLIB) $(libdir); fi
++	if [ -e '$(LIBPD_DEF)' ]; then install -m 755 $(LIBPD_DEF) $(libdir); fi
+ 
+ uninstall:
+ 	rm -rf $(includedir)/libpd

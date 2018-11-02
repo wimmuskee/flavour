@@ -1,0 +1,11 @@
+--- libpd-0.11.0/Makefile.orig	2018-11-02 06:54:39.493253666 +0100
++++ libpd-0.11.0/Makefile	2018-11-02 06:55:58.213252578 +0100
+@@ -34,7 +34,7 @@
+     SOLIB_EXT = so
+     PDNATIVE_ARCH = $(shell $(CC) -dumpmachine | sed -e 's,-.*,,' -e 's,i[3456]86,x86,' -e 's,amd64,x86_64,')
+     PLATFORM_CFLAGS = -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -fPIC
+-    LDFLAGS = -shared -Wl,-Bsymbolic
++    LDFLAGS = -shared -Wl,-Bsymbolic,-soname,libpd.$(SOLIB_EXT)
+     ifeq ($(UNAME), Linux)
+       PDNATIVE_PLATFORM = linux
+       JAVA_HOME ?= /usr/lib/jvm/default-java
