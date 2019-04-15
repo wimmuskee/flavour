@@ -1,6 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="6"
 PYTHON_COMPAT=( python2_7 )
@@ -14,7 +13,7 @@ DESCRIPTION="Turning Pure Data into an embeddable audio synthesis library."
 HOMEPAGE="http://www.libpd.cc"
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="examples python"
 DEPEND="python? (
 		dev-lang/swig

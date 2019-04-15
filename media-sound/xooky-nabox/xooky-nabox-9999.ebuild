@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="6"
 
@@ -11,6 +10,7 @@ EGIT_SUBMODULES=()
 DESCRIPTION="A C++ application for running PureData patches on embedded devices."
 HOMEPAGE="https://github.com/rvega/XookyNabox"
 SLOT="0"
+LICENSE="all-rights-reserved"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="examples"
 # depend on libpd from flavour overlay
