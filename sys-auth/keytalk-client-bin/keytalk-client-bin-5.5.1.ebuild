@@ -19,7 +19,8 @@ RESTRICT="mirror"
 IUSE="systemd"
 DEPEND=""
 # need findutils and openssl in custom client script
-RDEPEND="app-misc/ca-certificates
+RDEPEND="app-admin/killproc
+	app-misc/ca-certificates
 	<dev-libs/openssl-1.1
 	dev-libs/nss
 	sys-apps/hdparm
