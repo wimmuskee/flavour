@@ -1,6 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 # note: ebuild is not installing apache2 renewal functions
 
@@ -14,6 +13,7 @@ KEYWORDS="~amd64"
 LICENSE="KeyTalk"
 RESTRICT="mirror"
 DEPEND="app-arch/unzip"
+# need findutils and openssl in custom client script
 RDEPEND="app-misc/ca-certificates
 	<dev-libs/openssl-1.1
 	sys-apps/hdparm
@@ -33,7 +33,7 @@ src_install() {
 	dobin ktconfigtool
 	dobin ktprgen
 	dobin hwutils
-	dobin ${FILESDIR}/keytalk-client
+	dobin "${FILESDIR}/keytalk-client"
 
 	fperms 4755 /usr/bin/ktconfig
 	fperms 4755 /usr/bin/hwutils
@@ -47,7 +47,7 @@ src_install() {
 	doins cr.conf
 
 	insinto /usr/share/keytalk
-	doins ${FILESDIR}/empty-user.ini
+	doins "${FILESDIR}/empty-user.ini"
 }
 
 pkg_postinst() {
