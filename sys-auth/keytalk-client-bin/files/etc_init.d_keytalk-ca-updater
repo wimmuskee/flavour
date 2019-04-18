@@ -10,7 +10,7 @@ depend() {
     after bootmisc
     use logger
 }
-  
+
 start() {
     ebegin "Starting ${SVCNAME}"
     nohup $EXECUTABLE >/dev/null 2>&1 &
@@ -20,7 +20,7 @@ start() {
     fi
     eend $RETVAL
 }
-  
+
 stop() {
     if ps auxw | grep $EXECUTABLE | grep -v grep > /dev/null 2>&1 ; then
         ebegin "Stopping ${SVCNAME}"
