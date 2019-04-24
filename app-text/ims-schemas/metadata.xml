@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="contentpackage">Install imscp schema's.</flag>
+		<flag name="metadata">Install imsmd schema's.</flag>
+		<flag name="qti">Install imsqti schema's.</flag>
+		<flag name="vdex">Install imsvdex schema's.</flag>
+	</use>
+</pkgmetadata>
