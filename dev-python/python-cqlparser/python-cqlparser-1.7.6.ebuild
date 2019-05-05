@@ -1,6 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="6"
 PYTHON_COMPAT=( python2_7 )
@@ -20,7 +19,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/cqlparser-${PV}"
 
 python_test() {
-    # only doing single test to test python compatibility
-    # need seecr test deps for lots of the other tests
+	# only doing single test to test python compatibility
+	# need seecr test deps for lots of the other tests
 	"${PYTHON}" test/cqlparsertest.py || die "Test failed with ${EPYTHON}"
 }
