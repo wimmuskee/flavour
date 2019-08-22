@@ -1,10 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="5"
+EAPI="7"
 
-PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
+PYTHON_COMPAT=( python{2_7,3_{5,6}} )
 
 inherit distutils-r1 eutils
 
@@ -18,11 +17,8 @@ RESTRICT="mirror"
 IUSE=""
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/requests-1.1.0[${PYTHON_USEDEP}]"
+PATCHES=( "${FILESDIR}/${P}-setup.patch" )
 
 # not including test functionality
 # for this, the following are required:
 # mock, nose, unittest2
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-setupnew.patch"
-}

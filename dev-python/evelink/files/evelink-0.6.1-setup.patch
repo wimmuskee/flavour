@@ -1,18 +1,19 @@
---- setup.py.orig	2014-05-18 10:15:08.687412512 +0200
-+++ setup.py	2014-05-18 10:20:55.325436688 +0200
-@@ -7,6 +7,11 @@
+--- evelink-0.6.1/setup.py.orig	2015-02-24 07:21:46.818630547 +0100
++++ evelink-0.6.1/setup.py	2015-02-24 07:24:23.540641477 +0100
+@@ -11,6 +11,12 @@
+ except IOError:
+     __readme_contents = ""
  
- __readme_path = os.path.join(os.path.dirname(__file__), "README.md")
- __readme_contents = open(__readme_path).read()
-+__docdir = ""
 +
++__docdir = ""
 +if os.path.exists("/usr/share/doc"):
 +    __docdir = "/usr/share/doc/evelink-" + __version__
 +
- 
++
  setup(
      name="EVELink",
-@@ -28,7 +33,7 @@
+     version=__version__,
+@@ -31,7 +37,7 @@
          "evelink.thirdparty",
      ],
      data_files=[
