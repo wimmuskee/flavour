@@ -9,7 +9,7 @@ SRC_URI="https://github.com/machtelik/forticlientsslvpn/raw/master/tarball/forti
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="FortiClientSSLVPN"
-RESTRICT="strip mirror"
+RESTRICT="bindist strip mirror"
 DEPEND=""
 RDEPEND="net-dialup/ppp"
 

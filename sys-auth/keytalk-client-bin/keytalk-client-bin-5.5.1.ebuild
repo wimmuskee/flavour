@@ -15,7 +15,7 @@ SRC_URI="https://downloads.keytalk.com/downloads/clients/KeyTalkClient-${PV}-lin
 SLOT="0"
 KEYWORDS="~amd64"
 LICENSE="KeyTalk"
-RESTRICT="mirror"
+RESTRICT="bindist mirror"
 IUSE="systemd"
 DEPEND=""
 # need findutils and openssl in custom client script
@@ -36,6 +36,7 @@ PATCHES=(
 
 src_unpack() {
 	default
+	# debian9 version uses openssl-1.1
 	tar -xzf KeyTalkClient-${PV}-debian8-x64.tgz
 }
 

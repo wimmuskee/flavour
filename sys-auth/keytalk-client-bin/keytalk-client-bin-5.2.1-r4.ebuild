@@ -11,7 +11,7 @@ SRC_URI="https://downloads.keytalk.com/downloads/KTlinuxapacheclient.${PV}.zip"
 SLOT="0"
 KEYWORDS="~amd64"
 LICENSE="KeyTalk"
-RESTRICT="mirror"
+RESTRICT="bindist mirror"
 DEPEND="app-arch/unzip"
 # need findutils and openssl in custom client script
 RDEPEND="app-misc/ca-certificates
