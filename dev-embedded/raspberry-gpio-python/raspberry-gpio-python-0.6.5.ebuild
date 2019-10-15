@@ -1,15 +1,14 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="6"
-PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
+EAPI="7"
+PYTHON_COMPAT=( python{2_7,3_{5,6,7}} )
 
 inherit distutils-r1
 
 DESCRIPTION="a Python module to control the GPIO on a Raspberry Pi"
 HOMEPAGE="https://sourceforge.net/projects/raspberry-gpio-python"
-SRC_URI="http://downloads.sourceforge.net/project/${PN}/RPi.GPIO-${PV}.tar.gz"
+SRC_URI="https://sourceforge.net/projects/${PN}/files/old%20releases/RPi.GPIO-${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~arm"
