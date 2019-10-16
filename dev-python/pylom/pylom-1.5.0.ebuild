@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python{2_7,3_{5,6}} )
+PYTHON_COMPAT=( python{2_7,3_{5,6,7}} )
 
 inherit distutils-r1
 
@@ -14,10 +14,11 @@ LICENSE="MIT"
 SLOT="0"
 RESTRICT="mirror"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+IUSE="test"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	test? ( dev-python/lxml[${PYTHON_USEDEP}] )"
 RDEPEND="
-	dev-python/lxml"
+	dev-python/lxml[${PYTHON_USEDEP}]"
 
 python_test() {
 	"${PYTHON}" -m unittest discover -s test || die "Test failed with ${EPYTHON}"
