@@ -12,7 +12,8 @@ SRC_URI="https://github.com/niksite/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="PYTHON"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="mirror"
+RESTRICT="mirror
+	!test? ( test )"
 IUSE="test"
 DEPEND="dev-python/six[${PYTHON_USEDEP}]
 	test? ( dev-python/pytest[${PYTHON_USEDEP}] )"
