@@ -21,7 +21,7 @@ DEPEND=""
 # need findutils and openssl in custom client script
 RDEPEND="app-admin/killproc
 	app-misc/ca-certificates
-	<dev-libs/openssl-1.1
+	dev-libs/openssl:0=
 	dev-libs/nss
 	sys-apps/hdparm
 	sys-apps/findutils
@@ -36,8 +36,14 @@ PATCHES=(
 
 src_unpack() {
 	default
-	# debian9 version uses openssl-1.1
-	tar -xzf KeyTalkClient-${PV}-debian8-x64.tgz
+	installed_ssl_pv=$(best_version dev-libs/openssl | cut -d "-" -f 3-)
+	if ver_test "${installed_ssl_pv}" "-lt" "1.1"; then
+		einfo "Using debian8-x64 package"
+		tar -xzf KeyTalkClient-${PV}-debian8-x64.tgz
+	else
+		einfo "Using debian9-x64 package"
+		tar -xzf KeyTalkClient-${PV}-debian9-x64.tgz
+	fi
 }
 
 src_install() {
