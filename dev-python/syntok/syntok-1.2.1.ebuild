@@ -12,13 +12,8 @@ SRC_URI="https://github.com/fnl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 x86"
-RESTRICT="mirror
-	!test? ( test )"
-IUSE="test"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )"
+RESTRICT="mirror"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/regex[${PYTHON_USEDEP}]"
 
-python_test() {
-	py.test -vv || die
-}
+distutils_enable_tests pytest

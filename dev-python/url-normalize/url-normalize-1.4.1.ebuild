@@ -12,11 +12,8 @@ SRC_URI="https://github.com/niksite/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="PYTHON"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="mirror
-	!test? ( test )"
-IUSE="test"
-DEPEND="dev-python/six[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )"
+RESTRICT="mirror"
+DEPEND="dev-python/six[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]"
 
 src_prepare() {
@@ -25,6 +22,4 @@ src_prepare() {
 	rm tox.ini
 }
 
-python_test() {
-	py.test -vv || die
-}
+distutils_enable_tests pytest
