@@ -1,17 +1,16 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="6"
+EAPI="7"
 
-inherit git-r3
-
-DESCRIPTION="Scripts to setup and use Gentoo test chroot environments"
+DESCRIPTION="Tool to setup and use Gentoo test chroot environments"
 HOMEPAGE="https://github.com/wimmuskee/cleanstart"
-EGIT_REPO_URI="https://github.com/wimmuskee/cleanstart.git"
+SRC_URI="https://github.com/wimmuskee/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="MIT"
+RESTRICT="mirror"
 
 src_install() {
 	default
