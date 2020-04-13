@@ -17,4 +17,6 @@ RESTRICT="mirror"
 RDEPEND="dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/PyGithub[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
-	sys-apps/portage[${PYTHON_USEDEP}]"
+	dev-python/requests[${PYTHON_USEDEP}]
+	sys-apps/portage[${PYTHON_USEDEP}]
+"
