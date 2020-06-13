@@ -15,6 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 RESTRICT="mirror"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+BDEPEND="dev-python/wheel[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/pygments[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
