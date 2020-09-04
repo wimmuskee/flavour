@@ -7,7 +7,7 @@ DESCRIPTION="SoapUI is a free and open source cross-platform Functional Testing 
 HOMEPAGE="https://www.soapui.org/"
 LICENSE="SmartBear"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 SRC_URI="https://s3.amazonaws.com/downloads.eviware/soapuios/${PV}/SoapUI-${PV}-linux-bin.tar.gz"
 RESTRICT="bindist strip mirror"
 RDEPEND=">=virtual/jre-1.6"
