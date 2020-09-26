@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python{2_7,3_{6,7,8}} )
+PYTHON_COMPAT=( python3_{6,7,8} )
 DISTUTILS_USE_SETUPTOOLS=bdepend
 
 inherit distutils-r1
@@ -13,14 +13,14 @@ DESCRIPTION="Python class for reading and writing IMS-LOM records."
 HOMEPAGE="https://github.com/kennisnet/pylom"
 LICENSE="MIT"
 SLOT="0"
-RESTRICT="mirror
-	!test? ( test )"
+RESTRICT="mirror"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="test"
-DEPEND="test? ( dev-python/lxml[${PYTHON_USEDEP}] )"
+DEPEND="test? (
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}] )"
 RDEPEND="
-	dev-python/lxml[${PYTHON_USEDEP}]"
+	dev-python/lxml[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}]"
 
-python_test() {
-	"${PYTHON}" -m unittest discover -s test || die "Test failed with ${EPYTHON}"
-}
+distutils_enable_tests unittest
