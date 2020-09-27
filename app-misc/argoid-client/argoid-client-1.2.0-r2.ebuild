@@ -1,10 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="6"
-PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
-PYTHON_REQ_USE="threads"
+EAPI="7"
+PYTHON_COMPAT=( python3_{7,8} )
+DISTUTILS_USE_SETUPTOOLS=bdepend
 
 inherit distutils-r1
 
@@ -17,10 +16,9 @@ KEYWORDS="~arm"
 RESTRICT="mirror"
 IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND=">=dev-lang/python-exec-2
-	dev-embedded/adafruit-beaglebone-io-python
-	dev-python/jsonschema"
+RDEPEND=">=dev-lang/python-exec-2[${PYTHON_USEDEP}]
+	dev-embedded/adafruit-beaglebone-io-python[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]"
 S="${WORKDIR}/argoid-${PV}"
 
 python_install() {
