@@ -1,14 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="6"
+EAPI="7"
 inherit git-r3 linux-info
 
 DESCRIPTION="Contains config-pin, an easy-to-use pin configuration script."
 HOMEPAGE="https://github.com/RobertCNelson/bb.org-overlays/tree/master/tools/beaglebone-universal-io"
 EGIT_REPO_URI="https://github.com/RobertCNelson/bb.org-overlays.git"
-EGIT_COMMIT="0013331fd0fe49b90af5a57944ef854283ab1d70"
+EGIT_COMMIT="6b45252fe02fee50dee651c5239bfb1132ae7c9d"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~arm"
