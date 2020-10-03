@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/kennisnet/pylom"
 LICENSE="MIT"
 SLOT="0"
 RESTRICT="mirror"
-KEYWORDS="amd64 ~arm ~arm64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="test"
 DEPEND="test? (
 	dev-python/lxml[${PYTHON_USEDEP}]
