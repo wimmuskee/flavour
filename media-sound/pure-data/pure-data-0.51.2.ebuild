@@ -3,15 +3,15 @@
 
 EAPI="7"
 
-inherit autotools git-r3
+inherit autotools
 
 DESCRIPTION="A real-time graphical programming environment for audio and graphics processing."
 HOMEPAGE="https://puredata.info/"
-EGIT_REPO_URI="https://github.com/pure-data/pure-data.git"
+SRC_URI="https://github.com/${PN}/${PN}/archive/0.51-2.tar.gz -> ${P}.tar.gz"
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS=""
-RESTRICT="${RESTRICT} mirror"
+KEYWORDS="~amd64 ~x86"
+RESTRICT="mirror"
 IUSE="+alsa jack nls +oss portaudio portmidi"
 REQUIRED_USE="portmidi? ( !oss )"
 DOCS=( "LICENSE.txt" "README.txt" )
@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	dev-lang/tcl
 	dev-lang/tk
 "
+S="${WORKDIR}/${PN}-0.51-2"
 
 src_prepare() {
 	default

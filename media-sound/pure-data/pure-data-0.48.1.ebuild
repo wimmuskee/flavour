@@ -1,6 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="6"
 
@@ -11,7 +10,7 @@ HOMEPAGE="https://puredata.info/"
 SRC_URI="https://github.com/${PN}/${PN}/archive/0.48-1.tar.gz -> ${P}.tar.gz"
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS=""
+KEYWORDS="~amd64"
 RESTRICT="${RESTRICT} mirror"
 IUSE="+alsa jack nls +oss portaudio portmidi"
 REQUIRED_USE="portmidi? ( !oss )"
