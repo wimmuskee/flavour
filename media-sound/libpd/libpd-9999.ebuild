@@ -1,13 +1,16 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
-PYTHON_COMPAT=( python2_7 )
+EAPI="7"
+PYTHON_COMPAT=( python3_{7..8} )
 
 inherit distutils-r1 git-r3
 
 EGIT_REPO_URI="https://github.com/libpd/libpd.git"
 EGIT_SUBMODULES=( "jni/opensl_stream" "pure-data" )
+EGIT_OVERRIDE_REPO_NETTOYEURNY_OPENSL_STREAM="https://github.com/nettoyeurny/opensl_stream.git"
+EGIT_OVERRIDE_REPO_PURE_DATA_PURE_DATA="https://github.com/pure-data/pure-data.git"
+
 DESCRIPTION="Turning Pure Data into an embeddable audio synthesis library."
 HOMEPAGE="http://www.libpd.cc"
 SLOT="0"
@@ -18,7 +21,7 @@ DEPEND="python? (
 		dev-lang/swig
 	)"
 RDEPEND="python? (
-		dev-python/pyaudio
+		dev-python/pyaudio[${PYTHON_USEDEP}]
 	)"
 
 src_compile() {
@@ -32,7 +35,7 @@ src_compile() {
 }
 
 src_install() {
-	emake prefix="${D}/usr" install || die "emake install failed"
+	emake prefix="${D}/usr" libdir="${D}/usr/$(get_libdir)" install || die "emake install failed"
 
 	if use python; then
 		pushd python
@@ -46,8 +49,5 @@ src_install() {
 		doins samples/python/*
 	fi
 
-	# docs
-	dodoc CHANGES.txt
-	dodoc LICENSE.txt
-	dodoc README.md
+	einstalldocs
 }
