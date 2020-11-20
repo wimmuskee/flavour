@@ -26,4 +26,5 @@ src_install() {
 
 	insinto /etc/cleanstart/profiles
 	doins config/profile.default
+	# TODO add gentoo32
 }
