@@ -26,14 +26,11 @@ RDEPEND="
 DEPEND="sys-apps/help2man
 	test? ( ${RDEPEND} )"
 
-DOCS=("CHANGELOG.md")
-
 src_prepare() {
 	default
 	eautoreconf
 }
 
 src_test() {
-	# test fails currently
-	./test.sh
+	./test.sh || die "Test failed"
 }
