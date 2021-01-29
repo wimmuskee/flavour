@@ -1,8 +1,8 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_7 )
 DISTUTILS_USE_SETUPTOOLS=no
 
 inherit distutils-r1
@@ -15,9 +15,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 IUSE="examples"
-RDEPEND="dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/pyopenssl[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]"
+
+src_prepare() {
+    default
+    cp "${FILESDIR}/customtest.py" test/.
+}
+
+python_test() {
+	# customized tests, some others require seecr-test deps
+	"${PYTHON}" test/customtest.py || die "Test failed with ${EPYTHON}"
+}
 
 src_install(){
 	distutils-r1_src_install
@@ -27,3 +34,5 @@ src_install(){
 		dodoc doc/*
 	fi
 }
+
+
