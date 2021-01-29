@@ -20,8 +20,13 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/cqlparser-${SRC_PV}"
 
+
+src_prepare() {
+    default
+    cp "${FILESDIR}/customtest.py" test/.
+}
+
 python_test() {
-	# only doing single test to test python compatibility
-	# need seecr test deps for lots of the other tests
-	"${PYTHON}" test/cqlparsertest.py || die "Test failed with ${EPYTHON}"
+	# customized tests, some others require seecr-test deps
+	"${PYTHON}" test/customtest.py || die "Test failed with ${EPYTHON}"
 }
