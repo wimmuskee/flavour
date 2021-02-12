@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~x86"
 RESTRICT="mirror"
 
-#DEPEND="test? (
-#	dev-python/python-dotenv[${PYTHON_USEDEP}]
-#)"
+DEPEND="test? (
+	dev-python/freezegun[${PYTHON_USEDEP}]
+	dev-python/python-dotenv[${PYTHON_USEDEP}]
+)"
 RDEPEND="dev-python/python-dotenv[${PYTHON_USEDEP}]"
 
-# tests failing
-#distutils_enable_tests unittest
+distutils_enable_tests pytest
