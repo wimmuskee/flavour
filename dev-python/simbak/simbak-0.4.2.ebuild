@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/mark-bromell/simbak"
 SRC_URI="https://github.com/mark-bromell/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 RESTRICT="mirror"
 
 DEPEND="test? (
