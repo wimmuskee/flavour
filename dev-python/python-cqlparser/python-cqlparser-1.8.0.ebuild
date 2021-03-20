@@ -20,10 +20,9 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/cqlparser-${SRC_PV}"
 
-
 src_prepare() {
-    default
-    cp "${FILESDIR}/customtest.py" test/.
+	default
+	cp "${FILESDIR}/customtest.py" test/.
 }
 
 python_test() {
