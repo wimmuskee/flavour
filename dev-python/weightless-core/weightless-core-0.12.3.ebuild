@@ -17,8 +17,8 @@ RESTRICT="mirror"
 IUSE="examples"
 
 src_prepare() {
-    default
-    cp "${FILESDIR}/customtest.py" test/.
+	default
+	cp "${FILESDIR}/customtest.py" test/.
 }
 
 python_test() {
@@ -34,5 +34,3 @@ src_install(){
 		dodoc doc/*
 	fi
 }
-
-
