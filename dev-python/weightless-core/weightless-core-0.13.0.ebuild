@@ -7,14 +7,17 @@ DISTUTILS_USE_SETUPTOOLS=no
 
 inherit distutils-r1
 
+SRC_PV="0.13"
 DESCRIPTION="Weightless is a High Performance Asynchronous Networking Library."
 HOMEPAGE="https://github.com/seecr/weightless-core"
-SRC_URI="https://github.com/seecr/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/seecr/${PN}/archive/${SRC_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 IUSE="examples"
+
+S="${WORKDIR}/${PN}-${SRC_PV}"
 
 src_prepare() {
 	default
