@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( python3_{7..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
 inherit distutils-r1
 
-SRC_PV="0.13"
+# major.minor.0 is tagged as major.minor
+SRC_PV="0.13.1"
 DESCRIPTION="Weightless is a High Performance Asynchronous Networking Library."
 HOMEPAGE="https://github.com/seecr/weightless-core"
 SRC_URI="https://github.com/seecr/${PN}/archive/${SRC_PV}.tar.gz -> ${P}.tar.gz"
