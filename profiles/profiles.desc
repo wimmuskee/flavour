@@ -1,2 +1,2 @@
-amd64       flavour/amd64/17.1      dev
-x86         flavour/x86/17.1        dev
+amd64       default/amd64/17.1      dev
+x86         default/x86/17.1        dev
