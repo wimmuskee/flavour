@@ -1,0 +1,6 @@
+*app-admin/rsyslog
+*app-editors/nano
+*app-eselect/eselect-repository
+*net-misc/dhcpcd
+*sys-apps/openrc
+*sys-process/lsof
