@@ -1,0 +1,6 @@
+USE="-nls"
+
+# no unneeded docs
+INSTALL_MASK="/usr/share/doc/*/*.pdf"
+INSTALL_MASK="${INSTALL_MASK} /usr/share/doc/*/NEWS.bz2"
+INSTALL_MASK="${INSTALL_MASK} /usr/share/doc/*/TODO.bz2"
