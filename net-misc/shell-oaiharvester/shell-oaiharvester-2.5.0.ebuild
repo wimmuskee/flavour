@@ -1,7 +1,7 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 
 inherit autotools
 
@@ -9,7 +9,7 @@ DESCRIPTION="OAI-PMH harvester built in shell"
 HOMEPAGE="https://github.com/wimmuskee/shell-oaiharvester"
 SRC_URI="https://github.com/wimmuskee/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~arm64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 LICENSE="GPL-3"
 RESTRICT="mirror
 	!test? ( test )"
