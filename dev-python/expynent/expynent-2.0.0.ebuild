@@ -4,7 +4,6 @@
 EAPI="7"
 DISTUTILS_USE_PEP517=no
 PYTHON_COMPAT=( python3_{8..11} pypy3 )
-#DISTUTILS_USE_SETUPTOOLS=bdepend
 
 inherit distutils-r1
 
