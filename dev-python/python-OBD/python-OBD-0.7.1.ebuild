@@ -3,13 +3,13 @@
 
 EAPI="8"
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit distutils-r1
 
 DESCRIPTION="Serial module for handling live sensor data from a vehicle's OBD-II port"
 HOMEPAGE="https://github.com/brendan-w/python-OBD https://python-obd.readthedocs.io"
-SRC_URI="https://github.com/brendan-w/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/brendan-w/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
