@@ -15,7 +15,7 @@ DESCRIPTION="Turning Pure Data into an embeddable audio synthesis library."
 HOMEPAGE="https://github.com/libpd/libpd"
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="examples python"
 DEPEND="python? (
 		dev-lang/swig
@@ -39,7 +39,7 @@ src_install() {
 
 	if use python; then
 		pushd python
-        distutils-r1_src_install
+		distutils-r1_src_install
 		popd
 	fi
 

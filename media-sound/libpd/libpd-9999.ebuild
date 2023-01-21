@@ -38,7 +38,7 @@ src_install() {
 
 	if use python; then
 		pushd python
-        distutils-r1_src_install
+		distutils-r1_src_install
 		popd
 	fi
 
