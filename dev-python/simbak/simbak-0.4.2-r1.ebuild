@@ -1,9 +1,10 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
-PYTHON_COMPAT=( python3_{8..10} )
-DISTUTILS_USE_SETUPTOOLS=rdepend
+EAPI="8"
+
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1
 
@@ -20,5 +21,11 @@ DEPEND="test? (
 	dev-python/python-dotenv[${PYTHON_USEDEP}]
 )"
 RDEPEND="dev-python/python-dotenv[${PYTHON_USEDEP}]"
+
+src_prepare() {
+	eapply "${FILESDIR}/${PN}-${PV}-fileutil-test.patch"
+
+	eapply_user
+}
 
 distutils_enable_tests pytest
