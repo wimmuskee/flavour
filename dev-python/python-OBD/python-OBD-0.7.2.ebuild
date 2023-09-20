@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 DEPEND="test? (
-	>=dev-python/Pint-0.19[${PYTHON_USEDEP}]
-	<dev-python/Pint-0.20[${PYTHON_USEDEP}]
+	>=dev-python/Pint-0.20[${PYTHON_USEDEP}]
+	<dev-python/Pint-0.21[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3[${PYTHON_USEDEP}] )"
 
 RDEPEND="
-	>=dev-python/Pint-0.19[${PYTHON_USEDEP}]
-	<dev-python/Pint-0.20[${PYTHON_USEDEP}]
+	>=dev-python/Pint-0.20[${PYTHON_USEDEP}]
+	<dev-python/Pint-0.21[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
