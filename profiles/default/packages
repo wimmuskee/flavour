@@ -2,5 +2,6 @@
 *app-editors/nano
 *app-eselect/eselect-repository
 *net-misc/dhcpcd
+*net-misc/netifrc
 *sys-apps/openrc
 *sys-process/lsof
