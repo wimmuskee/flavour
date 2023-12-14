@@ -3,7 +3,7 @@
 
 EAPI="8"
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 
@@ -20,6 +20,11 @@ RDEPEND="
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]"
 BDEPEND="test? ( ${RDEPEND} )"
+
+src_prepare() {
+	eapply "${FILESDIR}/${PN}-${PV}-assertequal.patch"
+	eapply_user
+}
 
 python_test() {
 	"${PYTHON}" -m unittest discover -s imsvdex/tests || die "Test failed with ${EPYTHON}"
