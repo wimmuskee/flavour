@@ -1,11 +1,11 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
 
 JAVA_PKG_IUSE="source"
 
-inherit java-pkg-2 java-ant-2 git-r3
+inherit java-pkg-2 git-r3
 
 EGIT_REPO_URI="https://github.com/amouat/xsd-validator.git"
 EGIT_COMMIT="9d6ba887e06f0beec53a452c06e0aa52b2fabea9"
