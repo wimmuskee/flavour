@@ -1,23 +1,25 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 
-inherit autotools git-r3
+inherit autotools
 
 DESCRIPTION="A real-time graphical programming environment for audio and graphics processing."
 HOMEPAGE="https://puredata.info/"
-EGIT_REPO_URI="https://github.com/pure-data/pure-data.git"
-SLOT="0"
+SRC_URI="https://github.com/${PN}/${PN}/archive/$(ver_cut 1-2)-1.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${PN}-0.55-1"
 LICENSE="BSD"
-KEYWORDS=""
-RESTRICT="${RESTRICT} mirror"
-IUSE="+alsa jack nls +oss portaudio portmidi"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="+alsa fftw jack nls +oss portaudio portmidi"
+RESTRICT="mirror"
 REQUIRED_USE="portmidi? ( !oss )"
 DOCS=( "LICENSE.txt" "README.txt" )
 DEPEND="
 	sys-libs/glibc
 	alsa? ( media-libs/alsa-lib )
+	fftw? ( sci-libs/fftw )
 	jack? ( virtual/jack )
 	nls? ( sys-devel/gettext )
 	portaudio? ( media-libs/portaudio )
@@ -44,5 +46,6 @@ src_configure() {
 		$(use_enable portmidi) \
 		$(use_with !portmidi local-portmidi) \
 		$(use_enable portaudio) \
-		$(use_with !portaudio local-portaudio)
+		$(use_with !portaudio local-portaudio) \
+		$(use_enable fftw)
 }
