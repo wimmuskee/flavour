@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<upstream>
 		<remote-id type="github">hgrecco/pint</remote-id>
-		<remote-id type="pypi">Pint</remote-id>
+		<remote-id type="pypi">pint</remote-id>
 	</upstream>
 </pkgmetadata>
