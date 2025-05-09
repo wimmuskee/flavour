@@ -9,7 +9,6 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Operate and manipulate physical quantities in Python"
 HOMEPAGE="https://github.com/hgrecco/pint https://pint.readthedocs.io"
-SRC_URI="$(pypi_sdist_url --no-normalize "${PN,,}" "${PV}")"
 
 LICENSE="BSD"
 SLOT="0"

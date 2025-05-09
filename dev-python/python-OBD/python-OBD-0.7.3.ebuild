@@ -15,11 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 DEPEND="test? (
-	=dev-python/Pint-0.24*[${PYTHON_USEDEP}]
+	=dev-python/pint-0.24*[${PYTHON_USEDEP}]
 	=dev-python/pyserial-3*[${PYTHON_USEDEP}] )"
 
 RDEPEND="
-	=dev-python/Pint-0.24*[${PYTHON_USEDEP}]
+	=dev-python/pint-0.24*[${PYTHON_USEDEP}]
 	=dev-python/pyserial-3*[${PYTHON_USEDEP}]"
 
 src_prepare() {
