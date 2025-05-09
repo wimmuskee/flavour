@@ -1,10 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{11..12} )
 inherit distutils-r1 git-r3
 
 EGIT_REPO_URI="https://github.com/libpd/libpd.git"
@@ -12,8 +12,8 @@ EGIT_SUBMODULES=( "jni/opensl_stream" "pure-data" )
 
 DESCRIPTION="Turning Pure Data into an embeddable audio synthesis library."
 HOMEPAGE="https://github.com/libpd/libpd"
-SLOT="0"
 LICENSE="BSD"
+SLOT="0"
 KEYWORDS=""
 IUSE="examples python"
 DEPEND="python? (
