@@ -1,0 +1,10 @@
+--- python-OBD-0.7.3/pyproject.toml.orig	2025-05-09 09:48:46.488361008 +0200
++++ python-OBD-0.7.3/pyproject.toml	2025-05-09 09:48:58.198361892 +0200
+@@ -34,3 +34,7 @@
+ [project.urls]
+ Homepage = "https://github.com/brendan-w/python-OBD"
+ Issues = "https://github.com/brendan-w/python-OBD/issues"
++
++[build-system]
++requires = ["setuptools"]
++build-backend = "setuptools.build_meta"
