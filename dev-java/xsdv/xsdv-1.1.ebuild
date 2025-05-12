@@ -22,6 +22,10 @@ src_prepare() {
 	sed "s/@INSTALL_DIR@/\/usr\/share\/${PN}/" xsdv_install.sh > xsdv
 }
 
+src_test() {
+	./xsdv.sh "${FILESDIR}/test.xsd" "${FILESDIR}/test.xml" || die
+}
+
 src_install() {
 	default
 	java-pkg_dojar "lib/xsdv.jar"
