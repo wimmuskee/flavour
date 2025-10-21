@@ -1,0 +1,36 @@
+.\" Gentoo Docs for Flavoured computers.
+.TH man 7 "15 October 2025" "1.0" "Gentoo Docs for Flavoured computers"
+.SH NAME
+Gentoo Docs for Flavoured computers
+.SH DESCRIPTION
+My curated collection of documentation snippets related to Gentoo maintenance.
+.SH UPDATING
+.SS Old System
+An older system can be incrementally updated by switching the rsynced gentoo repo to a git version, and controlling the update increment by using
+.MR git-checkout 1
+.PP
+.EX
+.IP
+REV_ID=$(git rev-list -n 1 --first-parent --before="2022-12-01 00:00" master)
+git checkout $REV_ID
+emerge -av1 glibc
+reboot
+emerge -1av binutils
+eselect binutils
+source /etc/profile
+.EE
+.PP
+Emerging GCC might not be possible because the patch version source is not available anymore. In that case, ensure you build an unpatched clean version like 13.2.0 by masking others and adding accept keywords for the specific version if necessary.
+.SS Perl
+.EX
+emerge --nodeps dev-lang/perl
+perl-cleaner
+.EE
+.SS Python
+.PP New Version
+After emerging a new python version, ensure that the version use flag is applied and adding it to the PYTHON_TARGETS, for instance:
+.EX
+.IP
+emerge dev-lang/python:3.14
+echo "-python_targets_python3_14" >> /etc/portage/profile/use.stable.mask
+echo "*/* PYTHON_TARGETS: python3_14" >> /etc/portage/package.use
