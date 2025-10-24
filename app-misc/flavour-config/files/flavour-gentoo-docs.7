@@ -1,5 +1,5 @@
 .\" Gentoo Docs for Flavoured computers.
-.TH man 7 "15 October 2025" "1.0" "Gentoo Docs for Flavoured computers"
+.TH man 7 "24 October 2025" "1.0" "Gentoo Docs for Flavoured computers"
 .SH NAME
 Gentoo Docs for Flavoured computers
 .SH DESCRIPTION
@@ -34,3 +34,10 @@ After emerging a new python version, ensure that the version use flag is applied
 emerge dev-lang/python:3.14
 echo "-python_targets_python3_14" >> /etc/portage/profile/use.stable.mask
 echo "*/* PYTHON_TARGETS: python3_14" >> /etc/portage/package.use
+.SS QT
+Circumvent circular dependencies by selecting and emerging the qt:6 packages in one go.
+.EX
+.IP
+INSTALLED_QT_PACKAGES=$(eix --only-names -I -C dev-qt --slot 6)
+emerge -1av ${INSTALLED_QT_PACKAGES}
+.EE
