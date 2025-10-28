@@ -4,13 +4,13 @@
 EAPI="8"
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
 DESCRIPTION="A simple backup solution"
-HOMEPAGE="https://github.com/mark-bromell/simbak"
-SRC_URI="https://github.com/mark-bromell/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/markmacode/simbak"
+SRC_URI="https://github.com/markmacode/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 ~arm64 x86"
