@@ -10,7 +10,7 @@ git_branch() {
 getcolor() {
     branch=$(git_branch | tr -d '[]')
     
-    if [ "${branch}" == "master" ] || [ "${branch}" == "main" ]; then
+    if [ "${branch}" == "master" ] || [ "${branch}" == "main" ] || [ "${branch}" == "trunk" ]; then
         # yellow = 3
         color=$(tput setaf 3)
     elif [ "${branch}" == "tst" ]; then
