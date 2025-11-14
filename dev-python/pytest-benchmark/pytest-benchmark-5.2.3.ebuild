@@ -3,13 +3,13 @@
 
 EAPI="8"
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="A pytest fixture for benchmarking code"
 HOMEPAGE="https://github.com/ionelmc/pytest-benchmark"
-SRC_URI="$(pypi_sdist_url --no-normalize "${PN}" "${PV}")"
+SRC_URI="https://github.com/ionelmc/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${PV}"
 
 LICENSE="BSD-2"
